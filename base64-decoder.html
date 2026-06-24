@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%237c3aed'/><text y='72' x='50' text-anchor='middle' font-size='60'>🔤</text></svg>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 Decoder — Free Online Tool | PhraseFixTools</title>
+    <meta name="description" content="Decode Base64 to text instantly. Free online Base64 decoder.">
+    <link rel="canonical" href="https://phrasefixtools.unaux.com/base64-decoder">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="Base64 Decoder — Free Online Tool | PhraseFixTools">
+    <meta property="og:description" content="Decode Base64 to text instantly. Free online Base64 decoder.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://phrasefixtools.unaux.com/base64-decoder">
+    <!-- AdSense: add your publisher tag here when approved -->
+    <link rel="stylesheet" href="/css/style.css?v=1">
+    <script src="/js/theme-boot.js?v=1"></script>
+</head>
+<body data-base-path="">
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <button id="mobile-nav-toggle" aria-label="Open menu">&#9776;</button>
+    <a class="logo" data-navigate="home"><span class="logo-icon"></span>PhraseFixTools</a>
+    <div class="search-wrap search-center">
+      <span class="search-icon">🔍</span>
+      <input id="search-input" type="text" placeholder="Search 100+ tools..." autocomplete="off">
+      <div id="search-results"></div>
+    </div>
+    <div class="header-right">
+      <button id="theme-toggle" aria-label="Toggle theme"><span>☀️</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE OVERLAY -->
+<div id="mobile-nav-overlay"></div>
+<nav id="mobile-nav">
+  <button id="mobile-nav-close" aria-label="Close">&#x2715;</button>
+  <div id="mobile-nav-content"></div>
+</nav>
+
+<!-- APP -->
+<div id="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <p class="sidebar-label">NAVIGATION</p>
+    <button class="nav-link active" data-navigate="home">🏠 Home</button>
+    <p class="sidebar-label">TOOLS</p>
+    <button class="nav-link" data-navigate="basic">📝 Text Cases</button>
+    <button class="nav-link" data-navigate="counter">📊 Counters</button>
+    <button class="nav-link" data-navigate="formatter">💅 Formatters</button>
+    <button class="nav-link" data-navigate="modify">✏️ Modify</button>
+    <button class="nav-link" data-navigate="special-effects">✨ Special Effects</button>
+    <button class="nav-link" data-navigate="extract">🔍 Extract</button>
+    <button class="nav-link" data-navigate="sorting">⬇️ Sorting</button>
+    <button class="nav-link" data-navigate="remove">❌ Remove</button>
+    <button class="nav-link" data-navigate="replace">🔄 Replace</button>
+    <button class="nav-link" data-navigate="conversion">🔁 Conversion</button>
+    <button class="nav-link" data-navigate="generators">⚡ Generators</button>
+    <p class="sidebar-label">MORE TOOLS</p>
+    <button class="nav-link" data-navigate="encode-decode">🔐 Encode &amp; Decode</button>
+    <button class="nav-link" data-navigate="text-analysis">📈 Text Analysis</button>
+    <p class="sidebar-label">INFO</p>
+    <button class="nav-link" data-navigate="privacy">🔒 Privacy Policy</button>
+    <button class="nav-link" data-navigate="terms">📄 Terms of Service</button>
+    <button class="nav-link" data-navigate="contact">✉️ Contact Us</button>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <!-- ======== HOME ======== -->
+    <div id="page-home" class="page-container home-page">
+
+      <!-- HERO -->
+      <div class="home-hero">
+        <h1>100+ Free Online Text Tools</h1>
+        <p>Format, convert, extract and transform your text instantly — no signup, no install</p>
+        <div class="hero-search-wrap">
+          <span class="hero-search-icon">🔍</span>
+          <input type="text" id="home-search" class="hero-search-input" placeholder="Search tools... (case converter, formatter, etc.)">
+          <button class="hero-search-btn" onclick="homeSearch()">Search</button>
+        </div>
+      </div>
+
+      <!-- AD SLOT 1 -->
+      <div class="ad-slot">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- POPULAR TOOLS -->
+      <div class="home-section-header">
+        <h2 class="home-section-title">⭐ Popular Tools</h2>
+      </div>
+      <div class="tools-grid-home" id="popular-tools-grid">
+        <div class="tool-card-home" data-navigate="basic" data-tool="upper-case"><div class="tool-card-icon">📝</div><h3>Upper Case</h3><p>Convert text to UPPERCASE instantly</p></div>
+        <div class="tool-card-home" data-navigate="basic" data-tool="lower-case"><div class="tool-card-icon">📝</div><h3>Lower Case</h3><p>Convert text to lowercase instantly</p></div>
+        <div class="tool-card-home" data-navigate="basic" data-tool="title-case"><div class="tool-card-icon">📝</div><h3>Title Case</h3><p>Convert Text To Title Case Format</p></div>
+        <div class="tool-card-home" data-navigate="basic" data-tool="sentence-case"><div class="tool-card-icon">📝</div><h3>Sentence Case</h3><p>Convert to proper sentence case</p></div>
+        <div class="tool-card-home" data-navigate="formatter" data-tool="json"><div class="tool-card-icon">💅</div><h3>JSON Formatter</h3><p>Beautify and validate JSON code</p></div>
+        <div class="tool-card-home" data-navigate="counter" data-tool="character-word"><div class="tool-card-icon">📊</div><h3>Word Counter</h3><p>Count words, characters, sentences</p></div>
+        <div class="tool-card-home" data-navigate="remove" data-tool="remove-duplicate-lines"><div class="tool-card-icon">❌</div><h3>Remove Duplicates</h3><p>Remove duplicate lines from text</p></div>
+        <div class="tool-card-home" data-navigate="extract" data-tool="extract-emails"><div class="tool-card-icon">🔍</div><h3>Extract Emails</h3><p>Extract all email addresses from text</p></div>
+        <div class="tool-card-home" data-navigate="generators" data-tool="password"><div class="tool-card-icon">⚡</div><h3>Password Generator</h3><p>Generate strong secure passwords</p></div>
+        <div class="tool-card-home" data-navigate="conversion" data-tool="base64-encoder"><div class="tool-card-icon">🔁</div><h3>Base64 Encoder</h3><p>Encode text to Base64 format</p></div>
+        <div class="tool-card-home" data-navigate="special-effects" data-tool="reverse-text"><div class="tool-card-icon">✨</div><h3>Reverse Text</h3><p>Reverse any text string instantly</p></div>
+        <div class="tool-card-home" data-navigate="modify" data-tool="add-prefix"><div class="tool-card-icon">✏️</div><h3>Add Prefix</h3><p>Add text prefix to every line</p></div>
+      </div>
+
+      <!-- AD SLOT 2 -->
+      <div class="ad-slot">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- CATEGORY FILTERS -->
+      <div class="home-section-header">
+        <h2 class="home-section-title">🗂 Browse All Tools</h2>
+      </div>
+      <div class="category-filters">
+        <button class="cat-filter active" data-cat="all" onclick="filterHome(this,'all')">All Tools</button>
+        <button class="cat-filter" onclick="filterHome(this,'basic')">📝 Text Cases</button>
+        <button class="cat-filter" onclick="filterHome(this,'counter')">📊 Counters</button>
+        <button class="cat-filter" onclick="filterHome(this,'formatter')">💅 Formatters</button>
+        <button class="cat-filter" onclick="filterHome(this,'modify')">✏️ Modify</button>
+        <button class="cat-filter" onclick="filterHome(this,'special-effects')">✨ Special Effects</button>
+        <button class="cat-filter" onclick="filterHome(this,'extract')">🔍 Extract</button>
+        <button class="cat-filter" onclick="filterHome(this,'sorting')">⬇️ Sorting</button>
+        <button class="cat-filter" onclick="filterHome(this,'remove')">❌ Remove</button>
+        <button class="cat-filter" onclick="filterHome(this,'replace')">🔄 Replace</button>
+        <button class="cat-filter" onclick="filterHome(this,'conversion')">🔁 Conversion</button>
+        <button class="cat-filter" onclick="filterHome(this,'generators')">⚡ Generators</button>
+        <button class="cat-filter" onclick="filterHome(this,'encode-decode')">🔐 Encode &amp; Decode</button>
+        <button class="cat-filter" onclick="filterHome(this,'text-analysis')">📈 Text Analysis</button>
+      </div>
+
+      <!-- ALL TOOLS GRID -->
+      <div class="tools-grid-home" id="all-tools-grid">
+        <!-- BASIC -->
+        <div class="tool-card-home" data-cat="basic" data-navigate="basic" data-tool="upper-case"><div class="tool-card-icon">📝</div><h3>Upper Case</h3><p>Convert text to UPPERCASE</p></div>
+        <div class="tool-card-home" data-cat="basic" data-navigate="basic" data-tool="lower-case"><div class="tool-card-icon">📝</div><h3>Lower Case</h3><p>Convert text to lowercase</p></div>
+        <div class="tool-card-home" data-cat="basic" data-navigate="basic" data-tool="capitalize-words"><div class="tool-card-icon">📝</div><h3>Capitalize Words</h3><p>Capitalize First Letter Of Each Word</p></div>
+        <div class="tool-card-home" data-cat="basic" data-navigate="basic" data-tool="sentence-case"><div class="tool-card-icon">📝</div><h3>Sentence Case</h3><p>Convert text to sentence case.</p></div>
+        <div class="tool-card-home" data-cat="basic" data-navigate="basic" data-tool="title-case"><div class="tool-card-icon">📝</div><h3>Title Case</h3><p>Convert Text To Title Case</p></div>
+        <div class="tool-card-home" data-cat="basic" data-navigate="basic" data-tool="alternate-case"><div class="tool-card-icon">📝</div><h3>Alternate Case</h3><p>aLtErNaTe CaSe CoNvErSiOn</p></div>
+        <div class="tool-card-home" data-cat="basic" data-navigate="basic" data-tool="invert-case"><div class="tool-card-icon">📝</div><h3>Invert Case</h3><p>iNVERT cASE conversion</p></div>
+        <div class="tool-card-home" data-cat="basic" data-navigate="basic" data-tool="strikethrough"><div class="tool-card-icon">📝</div><h3>Strikethrough</h3><p>~~Strikethrough~~ text style</p></div>
+        <div class="tool-card-home" data-cat="basic" data-navigate="basic" data-tool="underline"><div class="tool-card-icon">📝</div><h3>Underline</h3><p>U̲n̲d̲e̲r̲l̲i̲n̲e̲ your text</p></div>
+        <!-- COUNTER -->
+        <div class="tool-card-home" data-cat="counter" data-navigate="counter" data-tool="character-word"><div class="tool-card-icon">📊</div><h3>Word Counter</h3><p>Count words, characters, sentences</p></div>
+        <div class="tool-card-home" data-cat="counter" data-navigate="counter" data-tool="line"><div class="tool-card-icon">📊</div><h3>Count Each Line</h3><p>Count items per line</p></div>
+        <div class="tool-card-home" data-cat="counter" data-navigate="counter" data-tool="bracket-tag"><div class="tool-card-icon">📊</div><h3>Bracket &amp; Tag Counter</h3><p>Count brackets, tags, symbols</p></div>
+        <!-- FORMATTER -->
+        <div class="tool-card-home" data-cat="formatter" data-navigate="formatter" data-tool="json"><div class="tool-card-icon">💅</div><h3>JSON Formatter</h3><p>Format and beautify JSON</p></div>
+        <div class="tool-card-home" data-cat="formatter" data-navigate="formatter" data-tool="html"><div class="tool-card-icon">💅</div><h3>HTML Beautifier</h3><p>Format and beautify HTML</p></div>
+        <div class="tool-card-home" data-cat="formatter" data-navigate="formatter" data-tool="css"><div class="tool-card-icon">💅</div><h3>CSS Beautifier</h3><p>Format and beautify CSS</p></div>
+        <div class="tool-card-home" data-cat="formatter" data-navigate="formatter" data-tool="javascript"><div class="tool-card-icon">💅</div><h3>JavaScript Beautifier</h3><p>Format and beautify JavaScript</p></div>
+        <div class="tool-card-home" data-cat="formatter" data-navigate="formatter" data-tool="sql"><div class="tool-card-icon">💅</div><h3>SQL Beautifier</h3><p>Format SQL queries beautifully</p></div>
+        <!-- MODIFY -->
+        <div class="tool-card-home" data-cat="modify" data-navigate="modify" data-tool="add-prefix"><div class="tool-card-icon">✏️</div><h3>Add Prefix</h3><p>Add text to start of every line</p></div>
+        <div class="tool-card-home" data-cat="modify" data-navigate="modify" data-tool="add-suffix"><div class="tool-card-icon">✏️</div><h3>Add Suffix</h3><p>Add text to end of every line</p></div>
+        <div class="tool-card-home" data-cat="modify" data-navigate="modify" data-tool="add-number-each-line"><div class="tool-card-icon">✏️</div><h3>Number Each Line</h3><p>Add line numbers 1. 2. 3.</p></div>
+        <div class="tool-card-home" data-cat="modify" data-navigate="modify" data-tool="add-text-to-each-line"><div class="tool-card-icon">✏️</div><h3>Add Text To Lines</h3><p>Append text to every line</p></div>
+        <div class="tool-card-home" data-cat="modify" data-navigate="modify" data-tool="merge-text"><div class="tool-card-icon">✏️</div><h3>Merge Text</h3><p>Combine lines into one</p></div>
+        <div class="tool-card-home" data-cat="modify" data-navigate="modify" data-tool="trimming-text"><div class="tool-card-icon">✏️</div><h3>Trimming Text</h3><p>Remove leading/trailing spaces</p></div>
+        <div class="tool-card-home" data-cat="modify" data-navigate="modify" data-tool="column-to-comma"><div class="tool-card-icon">✏️</div><h3>Column to Comma</h3><p>Convert column list to CSV</p></div>
+        <div class="tool-card-home" data-cat="modify" data-navigate="modify" data-tool="number-to-words"><div class="tool-card-icon">✏️</div><h3>Number to Words</h3><p>Convert numbers to word format</p></div>
+        <!-- SPECIAL EFFECTS -->
+        <div class="tool-card-home" data-cat="special-effects" data-navigate="special-effects" data-tool="bold"><div class="tool-card-icon">✨</div><h3>Bold Text</h3><p>𝐁𝐨𝐥𝐝 text style generator</p></div>
+        <div class="tool-card-home" data-cat="special-effects" data-navigate="special-effects" data-tool="italic"><div class="tool-card-icon">✨</div><h3>Italic Text</h3><p>𝘐𝘵𝘢𝘭𝘪𝘤 text style generator</p></div>
+        <div class="tool-card-home" data-cat="special-effects" data-navigate="special-effects" data-tool="bold-italic"><div class="tool-card-icon">✨</div><h3>Bold Italic</h3><p>𝑩𝒐𝒍𝒅 𝑰𝒕𝒂𝒍𝒊𝒄 combined style</p></div>
+        <div class="tool-card-home" data-cat="special-effects" data-navigate="special-effects" data-tool="reverse-text"><div class="tool-card-icon">✨</div><h3>Reverse Text</h3><p>txeT desreveR instantly</p></div>
+        <div class="tool-card-home" data-cat="special-effects" data-navigate="special-effects" data-tool="flip-text"><div class="tool-card-icon">✨</div><h3>Flip Text</h3><p>ʇxǝʇ pǝddᴉlℲ upside down</p></div>
+        <div class="tool-card-home" data-cat="special-effects" data-navigate="special-effects" data-tool="wide-text"><div class="tool-card-icon">✨</div><h3>Wide Text</h3><p>Ｗｉｄｅ　Ｔｅｘｔ generator</p></div>
+        <div class="tool-card-home" data-cat="special-effects" data-navigate="special-effects" data-tool="snake-case"><div class="tool-card-icon">✨</div><h3>Snake Case</h3><p>convert_to_snake_case</p></div>
+        <div class="tool-card-home" data-cat="special-effects" data-navigate="special-effects" data-tool="pascal-case"><div class="tool-card-icon">✨</div><h3>Pascal Case</h3><p>ConvertToPascalCase</p></div>
+        <!-- EXTRACT -->
+        <div class="tool-card-home" data-cat="extract" data-navigate="extract" data-tool="extract-emails"><div class="tool-card-icon">🔍</div><h3>Extract Emails</h3><p>Find all email addresses in text</p></div>
+        <div class="tool-card-home" data-cat="extract" data-navigate="extract" data-tool="extract-urls"><div class="tool-card-icon">🔍</div><h3>Extract URLs</h3><p>Find all links and URLs in text</p></div>
+        <div class="tool-card-home" data-cat="extract" data-navigate="extract" data-tool="extract-phone-numbers"><div class="tool-card-icon">🔍</div><h3>Extract Phone Numbers</h3><p>Find all phone numbers in text</p></div>
+        <div class="tool-card-home" data-cat="extract" data-navigate="extract" data-tool="extract-ip-address"><div class="tool-card-icon">🔍</div><h3>Extract IP Address</h3><p>Find all IP addresses in text</p></div>
+        <div class="tool-card-home" data-cat="extract" data-navigate="extract" data-tool="extract-numbers"><div class="tool-card-icon">🔍</div><h3>Extract Numbers</h3><p>Extract all numbers from text</p></div>
+        <div class="tool-card-home" data-cat="extract" data-navigate="extract" data-tool="extract-hex-colors"><div class="tool-card-icon">🔍</div><h3>Extract Hex Colors</h3><p>Find hex color codes in text</p></div>
+        <!-- SORTING -->
+        <div class="tool-card-home" data-cat="sorting" data-navigate="sorting" data-tool="alphabetical-sort"><div class="tool-card-icon">⬇️</div><h3>Alphabetical Sort</h3><p>Sort lines A to Z or Z to A</p></div>
+        <div class="tool-card-home" data-cat="sorting" data-navigate="sorting" data-tool="length-sort"><div class="tool-card-icon">⬇️</div><h3>Length Sort</h3><p>Sort lines by character length</p></div>
+        <div class="tool-card-home" data-cat="sorting" data-navigate="sorting" data-tool="sort-numbers"><div class="tool-card-icon">⬇️</div><h3>Sort Numbers</h3><p>Sort numeric values in order</p></div>
+        <div class="tool-card-home" data-cat="sorting" data-navigate="sorting" data-tool="randomly-sort"><div class="tool-card-icon">⬇️</div><h3>Randomly Sort</h3><p>Shuffle lines in random order</p></div>
+        <!-- REMOVE -->
+        <div class="tool-card-home" data-cat="remove" data-navigate="remove" data-tool="remove-duplicate-lines"><div class="tool-card-icon">❌</div><h3>Remove Duplicates</h3><p>Delete duplicate lines from text</p></div>
+        <div class="tool-card-home" data-cat="remove" data-navigate="remove" data-tool="remove-empty-lines"><div class="tool-card-icon">❌</div><h3>Remove Empty Lines</h3><p>Delete all blank lines</p></div>
+        <div class="tool-card-home" data-cat="remove" data-navigate="remove" data-tool="remove-extra-spaces"><div class="tool-card-icon">❌</div><h3>Remove Extra Spaces</h3><p>Clean up extra whitespace</p></div>
+        <div class="tool-card-home" data-cat="remove" data-navigate="remove" data-tool="remove-html-tags"><div class="tool-card-icon">❌</div><h3>Remove HTML Tags</h3><p>Strip all HTML from text</p></div>
+        <div class="tool-card-home" data-cat="remove" data-navigate="remove" data-tool="remove-line-breaks"><div class="tool-card-icon">❌</div><h3>Remove Line Breaks</h3><p>Join lines into one paragraph</p></div>
+        <div class="tool-card-home" data-cat="remove" data-navigate="remove" data-tool="remove-special-characters"><div class="tool-card-icon">❌</div><h3>Remove Special Chars</h3><p>Keep only alphanumeric text</p></div>
+        <div class="tool-card-home" data-cat="remove" data-navigate="remove" data-tool="remove-numbers"><div class="tool-card-icon">❌</div><h3>Remove Numbers</h3><p>Delete all numbers from text</p></div>
+        <div class="tool-card-home" data-cat="remove" data-navigate="remove" data-tool="remove-spaces"><div class="tool-card-icon">❌</div><h3>Remove Spaces</h3><p>Delete all spaces from text</p></div>
+        <!-- REPLACE -->
+        <div class="tool-card-home" data-cat="replace" data-navigate="replace" data-tool="find-replace"><div class="tool-card-icon">🔄</div><h3>Find &amp; Replace</h3><p>Search and replace any text</p></div>
+        <div class="tool-card-home" data-cat="replace" data-navigate="replace" data-tool="replace-spaces"><div class="tool-card-icon">🔄</div><h3>Replace Spaces</h3><p>Replace spaces with custom chars</p></div>
+        <div class="tool-card-home" data-cat="replace" data-navigate="replace" data-tool="replace-newline-commas"><div class="tool-card-icon">🔄</div><h3>Replace Newlines</h3><p>Replace line breaks with commas</p></div>
+        <!-- CONVERSION -->
+        <div class="tool-card-home" data-cat="conversion" data-navigate="conversion" data-tool="base64-encoder"><div class="tool-card-icon">🔁</div><h3>Base64 Encoder</h3><p>Encode text to Base64</p></div>
+        <div class="tool-card-home" data-cat="conversion" data-navigate="conversion" data-tool="base64-decoder"><div class="tool-card-icon">🔁</div><h3>Base64 Decoder</h3><p>Decode Base64 to text</p></div>
+        <div class="tool-card-home" data-cat="conversion" data-navigate="conversion" data-tool="url-encode"><div class="tool-card-icon">🔁</div><h3>URL Encode</h3><p>Encode URLs and URI components</p></div>
+        <div class="tool-card-home" data-cat="conversion" data-navigate="conversion" data-tool="url-decode"><div class="tool-card-icon">🔁</div><h3>URL Decode</h3><p>Decode URL encoded text</p></div>
+        <div class="tool-card-home" data-cat="conversion" data-navigate="conversion" data-tool="html-entities"><div class="tool-card-icon">🔁</div><h3>HTML Entities</h3><p>Convert HTML special characters</p></div>
+        <div class="tool-card-home" data-cat="conversion" data-navigate="conversion" data-tool="text-binary"><div class="tool-card-icon">🔁</div><h3>Text to Binary</h3><p>Convert text to binary code</p></div>
+        <!-- GENERATORS -->
+        <div class="tool-card-home" data-cat="generators" data-navigate="generators" data-tool="lorem-ipsum"><div class="tool-card-icon">⚡</div><h3>Lorem Ipsum</h3><p>Generate placeholder lorem ipsum</p></div>
+        <div class="tool-card-home" data-cat="generators" data-navigate="generators" data-tool="password"><div class="tool-card-icon">⚡</div><h3>Password Generator</h3><p>Generate secure random passwords</p></div>
+        <div class="tool-card-home" data-cat="generators" data-navigate="generators" data-tool="random-number"><div class="tool-card-icon">⚡</div><h3>Random Number</h3><p>Generate random numbers</p></div>
+        <div class="tool-card-home" data-cat="generators" data-navigate="generators" data-tool="random-color"><div class="tool-card-icon">⚡</div><h3>Random Color</h3><p>Generate random hex colors</p></div>
+        <div class="tool-card-home" data-cat="generators" data-navigate="generators" data-tool="url-slug"><div class="tool-card-icon">⚡</div><h3>URL Slug Generator</h3><p>Generate SEO-friendly URL slugs</p></div>
+        <div class="tool-card-home" data-cat="generators" data-navigate="generators" data-tool="random-email"><div class="tool-card-icon">⚡</div><h3>Random Email</h3><p>Generate random email addresses</p></div>
+        <!-- ENCODE & DECODE -->
+        <div class="tool-card-home" data-cat="encode-decode" data-navigate="encode-decode" data-ntool="hex-to-text"><div class="tool-card-icon">🔐</div><h3>Hex to Text</h3><p>Convert hexadecimal to readable text</p></div>
+        <div class="tool-card-home" data-cat="encode-decode" data-navigate="encode-decode" data-ntool="text-to-hex"><div class="tool-card-icon">🔐</div><h3>Text to Hex</h3><p>Convert text to hex format</p></div>
+        <div class="tool-card-home" data-cat="encode-decode" data-navigate="encode-decode" data-ntool="ascii-to-text"><div class="tool-card-icon">🔐</div><h3>ASCII Converter</h3><p>Convert between text and ASCII codes</p></div>
+        <div class="tool-card-home" data-cat="encode-decode" data-navigate="encode-decode" data-ntool="morse"><div class="tool-card-icon">📡</div><h3>Morse Code</h3><p>Translate text to/from Morse code</p></div>
+        <div class="tool-card-home" data-cat="encode-decode" data-navigate="encode-decode" data-ntool="caesar"><div class="tool-card-icon">🔑</div><h3>Caesar Cipher</h3><p>ROT13 and Caesar cipher encoder</p></div>
+        <div class="tool-card-home" data-cat="encode-decode" data-navigate="encode-decode" data-ntool="qr"><div class="tool-card-icon">⬛</div><h3>QR Code Generator</h3><p>Generate QR codes from any text</p></div>
+        <!-- TEXT ANALYSIS -->
+        <div class="tool-card-home" data-cat="text-analysis" data-navigate="text-analysis" data-ntool="word-frequency"><div class="tool-card-icon">📊</div><h3>Word Frequency</h3><p>Count how often each word appears</p></div>
+        <div class="tool-card-home" data-cat="text-analysis" data-navigate="text-analysis" data-ntool="keyword-density"><div class="tool-card-icon">🔑</div><h3>Keyword Density</h3><p>Check keyword density for SEO</p></div>
+        <div class="tool-card-home" data-cat="text-analysis" data-navigate="text-analysis" data-ntool="readability"><div class="tool-card-icon">📖</div><h3>Readability Score</h3><p>Flesch-Kincaid readability checker</p></div>
+        <div class="tool-card-home" data-cat="text-analysis" data-navigate="text-analysis" data-ntool="diff"><div class="tool-card-icon">↔️</div><h3>Text Diff</h3><p>Compare two texts side by side</p></div>
+        <div class="tool-card-home" data-cat="text-analysis" data-navigate="text-analysis" data-ntool="reading-time"><div class="tool-card-icon">⏱️</div><h3>Reading Time</h3><p>Estimate reading and speaking time</p></div>
+        <div class="tool-card-home" data-cat="text-analysis" data-navigate="text-analysis" data-ntool="syllable"><div class="tool-card-icon">🔤</div><h3>Syllable Counter</h3><p>Count syllables in every word</p></div>
+        <div class="tool-card-home" data-cat="text-analysis" data-navigate="text-analysis" data-ntool="sentiment"><div class="tool-card-icon">😊</div><h3>Sentiment Analyzer</h3><p>Detect positive/negative sentiment</p></div>
+        <div class="tool-card-home" data-cat="text-analysis" data-navigate="text-analysis" data-ntool="lang"><div class="tool-card-icon">🌐</div><h3>Language Detector</h3><p>Detect the language of any text</p></div>
+        <div class="tool-card-home" data-cat="text-analysis" data-navigate="text-analysis" data-ntool="similarity"><div class="tool-card-icon">🔗</div><h3>Text Similarity</h3><p>Compare similarity of two texts</p></div>
+      </div>
+
+      <!-- AD SLOT 3 -->
+      <div class="ad-slot">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+    </div>
+    <!-- ======== BASIC ======== -->
+    <div id="page-basic" class="page-container">
+      <div class="page-heading"><h1>🔤 Basic Text Tools</h1><p>Instantly transform your text with simple case converters and styling tools.</p></div>
+      <div class="tabs-wrapper">
+        <div class="tabs" id="basic-tabs">
+          <button class="tab-button" data-tool="upper-case">Upper Case</button>
+          <button class="tab-button" data-tool="lower-case">Lower Case</button>
+          <button class="tab-button" data-tool="capitalize-words">Capitalize Words</button>
+          <button class="tab-button" data-tool="sentence-case">Sentence Case</button>
+          <button class="tab-button" data-tool="title-case">Title Case</button>
+          <button class="tab-button" data-tool="alternate-case">Alternate Case</button>
+          <button class="tab-button" data-tool="invert-case">Invert Case</button>
+          <button class="tab-button" data-tool="strikethrough">Strikethrough</button>
+          <button class="tab-button" data-tool="underline">Underline</button>
+        </div>
+      </div>
+      <div class="tool-workspace">
+        <div class="io-grid">
+          <div class="io-block"><label>INPUT</label><textarea id="basic-input" rows="12" placeholder="Type or paste your text here ..."></textarea></div>
+          <div class="io-block"><label>OUTPUT</label><textarea id="basic-output" rows="12" readonly placeholder="Result appears here ..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-success" onclick="copyText('basic-output')">📋 Copy</button>
+          <button id="basic-clear-btn" class="btn btn-outline">Clear</button>
+        </div>
+      </div>
+      <div id="basic-content" class="tool-seo-content"></div>
+    </div>
+
+    <!-- ======== COUNTER ======== -->
+    <div id="page-counter" class="page-container">
+      <div class="page-heading"><h1>🔢 Text Counters</h1><p>Count words, characters, lines, brackets and more with precision.</p></div>
+      <div class="tabs-wrapper">
+        <div class="tabs" id="counter-tabs">
+          <button class="tab-button" data-tool="character-word">Character &amp; Word Counter</button>
+          <button class="tab-button" data-tool="line">Count Each Line</button>
+          <button class="tab-button" data-tool="bracket-tag">Bracket &amp; Tag Counter</button>
+        </div>
+      </div>
+      <div class="tool-workspace">
+        <div class="io-block"><label>INPUT TEXT</label><textarea id="counter-input" rows="10" placeholder="Type or paste your text here ..."></textarea></div>
+        <div id="counter-stats"></div>
+      </div>
+      <div id="counter-content" class="tool-seo-content"></div>
+    </div>
+
+    <!-- ======== FORMATTER ======== -->
+    <div id="page-formatter" class="page-container">
+      <div class="page-heading"><h1>✨ Code Formatters</h1><p>Beautify and format JSON, HTML, CSS, JavaScript and SQL instantly.</p></div>
+      <div class="tabs-wrapper">
+        <div class="tabs" id="formatter-tabs">
+          <button class="tab-button" data-tool="css">CSS Beautifier</button>
+          <button class="tab-button" data-tool="html">HTML Beautifier</button>
+          <button class="tab-button" data-tool="javascript">JavaScript Beautifier</button>
+          <button class="tab-button" data-tool="json">JSON Beautifier</button>
+          <button class="tab-button" data-tool="sql">SQL Beautifier</button>
+        </div>
+      </div>
+      <div class="tool-workspace">
+        <div class="io-grid">
+          <div class="io-block"><label>INPUT</label><textarea id="formatter-input" rows="14" placeholder="Paste your code here ..."></textarea></div>
+          <div class="io-block"><label>FORMATTED OUTPUT</label><textarea id="formatter-output" rows="14" readonly placeholder="Beautified code appears here ..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button id="formatter-beautify-btn" class="btn btn-primary">✨ Beautify</button>
+          <button class="btn btn-success" onclick="copyText('formatter-output')">📋 Copy</button>
+          <button id="formatter-clear-btn" class="btn btn-outline">Clear</button>
+        </div>
+      </div>
+      <div id="formatter-content" class="tool-seo-content"></div>
+    </div>
+
+    <!-- ======== MODIFY ======== -->
+    <div id="page-modify" class="page-container">
+      <div class="page-heading"><h1>✏️ Modify Text</h1><p>Add prefix, suffix, line numbers and more to your text in one click.</p></div>
+      <div class="tabs-wrapper">
+        <div class="tabs" id="modify-tabs">
+          <button class="tab-button" data-tool="add-number-each-line">Add Number To Each Line</button>
+          <button class="tab-button" data-tool="add-prefix">Add Prefix</button>
+          <button class="tab-button" data-tool="add-suffix">Add Suffix</button>
+          <button class="tab-button" data-tool="add-text-to-each-line">Add Text To Each Line</button>
+          <button class="tab-button" data-tool="add-text-in-specific-position">Add Text In Specific Position</button>
+          <button class="tab-button" data-tool="add-string-after-number-of-characters">Add String After N Characters</button>
+          <button class="tab-button" data-tool="column-to-comma">Column to Comma</button>
+          <button class="tab-button" data-tool="commas-between-numbers">Commas Between Numbers</button>
+          <button class="tab-button" data-tool="convert-commas-to-lines">Convert Commas to Lines</button>
+          <button class="tab-button" data-tool="convert-double-space-to-single-space">Double Space to Single</button>
+          <button class="tab-button" data-tool="convert-single-space-to-double-space">Single Space to Double</button>
+          <button class="tab-button" data-tool="keep-first-characters-of-each-line">Keep First Characters</button>
+          <button class="tab-button" data-tool="keep-last-characters-of-each-line">Keep Last Characters</button>
+          <button class="tab-button" data-tool="keep-lines-containing">Keep Lines Containing Word</button>
+          <button class="tab-button" data-tool="merge-text">Merge Text Or Lists</button>
+          <button class="tab-button" data-tool="number-to-words">Number to Words</button>
+          <button class="tab-button" data-tool="trimming-text">Trimming Text</button>
+        </div>
+      </div>
+      <div class="tool-workspace">
+        <div id="modify-options-container" class="options-row"></div>
+        <div class="io-grid">
+          <div class="io-block"><label>INPUT TEXT</label><textarea id="modify-input" rows="10" placeholder="Paste your text here ..."></textarea></div>
+          <div class="io-block"><label>OUTPUT</label><textarea id="modify-output" rows="10" readonly placeholder="Result appears here ..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button id="modify-run-btn" class="btn btn-primary">▶ Run</button>
+          <button class="btn btn-success" onclick="copyText('modify-output')">📋 Copy</button>
+          <button id="modify-clear-btn" class="btn btn-outline">Clear</button>
+        </div>
+      </div>
+      <div id="modify-content" class="tool-seo-content"></div>
+    </div>
+
+    <!-- ======== SPECIAL EFFECTS ======== -->
+    <div id="page-special-effects" class="page-container">
+      <div class="page-heading"><h1>💫 Special Effects</h1><p>Create bold, italic, flipped, reversed and upside-down text for social media.</p></div>
+      <div class="tabs-wrapper">
+        <div class="tabs" id="special-effects-tabs">
+          <button class="tab-button" data-tool="binary-code-to-text">Binary To Text</button>
+          <button class="tab-button" data-tool="bold">Bold</button>
+          <button class="tab-button" data-tool="bold-gothic">Bold Gothic</button>
+          <button class="tab-button" data-tool="bold-italic">Bold Italic</button>
+          <button class="tab-button" data-tool="circled">Circled Text</button>
+          <button class="tab-button" data-tool="cursive-bold">Cursive Bold</button>
+          <button class="tab-button" data-tool="flip-text">Flip Text</button>
+          <button class="tab-button" data-tool="flip-words">Flip Words</button>
+          <button class="tab-button" data-tool="gothic">Gothic Text</button>
+          <button class="tab-button" data-tool="italic">Italic</button>
+          <button class="tab-button" data-tool="outline">Outline Text</button>
+          <button class="tab-button" data-tool="parentheses-around-letters">Parentheses Letters</button>
+          <button class="tab-button" data-tool="pascal-case">Pascal Case</button>
+          <button class="tab-button" data-tool="reverse-text">Reverse Text</button>
+          <button class="tab-button" data-tool="slashed">Slashed</button>
+          <button class="tab-button" data-tool="snake-case">Snake Case</button>
+          <button class="tab-button" data-tool="upside-down-text">Upside Down</button>
+          <button class="tab-button" data-tool="wide-text">Wide Text</button>
+        </div>
+      </div>
+      <div class="tool-workspace">
+        <div class="io-grid">
+          <div class="io-block"><label>INPUT TEXT</label><textarea id="special-effects-input" rows="10" placeholder="Type your text here ..."></textarea></div>
+          <div class="io-block"><label>OUTPUT</label><textarea id="special-effects-output" rows="10" readonly placeholder="Result appears here ..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-success" onclick="copyText('special-effects-output')">📋 Copy</button>
+          <button id="special-effects-clear-btn" class="btn btn-outline">Clear</button>
+        </div>
+      </div>
+      <div id="special-effects-content" class="tool-seo-content"></div>
+    </div>
+
+    <!-- ======== EXTRACT ======== -->
+    <div id="page-extract" class="page-container">
+      <div class="page-heading"><h1>🔍 Extract Tools</h1><p>Extract emails, URLs, phone numbers, IP addresses and more from any text.</p></div>
+      <div class="tabs-wrapper">
+        <div class="tabs" id="extract-tabs">
+          <button class="tab-button" data-tool="extract-emails">Extract Emails</button>
+          <button class="tab-button" data-tool="extract-phone-numbers">Extract Phone Numbers</button>
+          <button class="tab-button" data-tool="extract-ip-address">Extract IP Address</button>
+          <button class="tab-button" data-tool="extract-zip-codes">Extract Zip Codes</button>
+          <button class="tab-button" data-tool="extract-urls">Extract URLs</button>
+          <button class="tab-button" data-tool="extract-image-urls">Extract Image URLs</button>
+          <button class="tab-button" data-tool="extract-hex-colors">Extract Hex Colors</button>
+          <button class="tab-button" data-tool="extract-numbers">Extract Numbers</button>
+          <button class="tab-button" data-tool="extract-text-between">Extract Text Between</button>
+          <button class="tab-button" data-tool="extract-random-lines">Extract Random Lines</button>
+        </div>
+      </div>
+      <div class="tool-workspace">
+        <div id="extract-options-container" class="options-row"></div>
+        <div class="io-grid">
+          <div class="io-block"><label>INPUT TEXT</label><textarea id="extract-input" rows="10" placeholder="Paste your text here ..."></textarea></div>
+          <div class="io-block"><label>EXTRACTED RESULTS</label><textarea id="extract-output" rows="10" readonly placeholder="Extracted results appear here ..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button id="extract-run-btn" class="btn btn-primary">▶ Extract</button>
+          <button class="btn btn-success" onclick="copyText('extract-output')">📋 Copy</button>
+          <button id="extract-clear-btn" class="btn btn-outline">Clear</button>
+        </div>
+      </div>
+      <div id="extract-content" class="tool-seo-content"></div>
+    </div>
+
+    <!-- ======== SORTING ======== -->
+    <div id="page-sorting" class="page-container">
+      <div class="page-heading"><h1>🔃 Sorting Tools</h1><p>Sort lines alphabetically, by length, numerically or randomly in seconds.</p></div>
+      <div class="tabs-wrapper">
+        <div class="tabs" id="sorting-tabs">
+          <button class="tab-button" data-tool="alphabetical-sort">Alphabetical Sort</button>
+          <button class="tab-button" data-tool="length-sort">Length Sort</button>
+          <button class="tab-button" data-tool="randomly-sort">Randomly Sort Lines</button>
+          <button class="tab-button" data-tool="sort-numbers">Sort Numbers</button>
+        </div>
+      </div>
+      <div class="tool-workspace">
+        <div class="io-grid">
+          <div class="io-block"><label>INPUT (one item per line)</label><textarea id="sorting-input" rows="10" placeholder="Paste your list here ..."></textarea></div>
+          <div class="io-block"><label>SORTED OUTPUT</label><textarea id="sorting-output" rows="10" readonly placeholder="Sorted result appears here ..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button id="sorting-sort-btn" class="btn btn-primary">▶ Sort</button>
+          <button class="btn btn-success" onclick="copyText('sorting-output')">📋 Copy</button>
+          <button id="sorting-clear-btn" class="btn btn-outline">Clear</button>
+        </div>
+      </div>
+      <div id="sorting-content" class="tool-seo-content"></div>
+    </div>
+
+    <!-- ======== REMOVE ======== -->
+    <div id="page-remove" class="page-container">
+      <div class="page-heading"><h1>❌ Remove Tools</h1><p>Remove duplicate lines, empty lines, spaces, HTML tags and more.</p></div>
+      <div class="tabs-wrapper">
+        <div class="tabs" id="remove-tabs">
+          <button class="tab-button" data-tool="remove-consonants">Remove Consonants</button>
+          <button class="tab-button" data-tool="remove-duplicate-lines">Remove Duplicate Lines</button>
+          <button class="tab-button" data-tool="remove-duplicate-words">Remove Duplicate Words</button>
+          <button class="tab-button" data-tool="remove-empty-lines">Remove Empty Lines</button>
+          <button class="tab-button" data-tool="remove-extra-spaces">Remove Extra Spaces</button>
+          <button class="tab-button" data-tool="remove-first-characters">Remove First Characters</button>
+          <button class="tab-button" data-tool="remove-html-comments">Remove HTML Comments</button>
+          <button class="tab-button" data-tool="remove-html-tags">Remove HTML Tags</button>
+          <button class="tab-button" data-tool="remove-last-characters">Remove Last Characters</button>
+          <button class="tab-button" data-tool="remove-leading-trailing-spaces">Remove Leading/Trailing Spaces</button>
+          <button class="tab-button" data-tool="remove-line-breaks">Remove Line Breaks</button>
+          <button class="tab-button" data-tool="remove-lines-containing">Remove Lines Containing Word</button>
+          <button class="tab-button" data-tool="remove-numbers">Remove Numbers</button>
+          <button class="tab-button" data-tool="remove-numbers-from-text">Remove Numbers From Text</button>
+          <button class="tab-button" data-tool="remove-quotes">Remove Quotes</button>
+          <button class="tab-button" data-tool="remove-single-quotes">Remove Single Quotes</button>
+          <button class="tab-button" data-tool="remove-spaces">Remove Spaces</button>
+          <button class="tab-button" data-tool="remove-special-characters">Remove Special Characters</button>
+          <button class="tab-button" data-tool="remove-tabs">Remove Tabs</button>
+          <button class="tab-button" data-tool="remove-text-between">Remove Text Between</button>
+          <button class="tab-button" data-tool="remove-vowels">Remove Vowels</button>
+        </div>
+      </div>
+      <div class="tool-workspace">
+        <div id="remove-options-container" class="options-row"></div>
+        <div class="io-grid">
+          <div class="io-block"><label>INPUT TEXT</label><textarea id="remove-input" rows="10" placeholder="Paste your text here ..."></textarea></div>
+          <div class="io-block"><label>OUTPUT</label><textarea id="remove-output" rows="10" readonly placeholder="Result appears here ..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button id="remove-run-btn" class="btn btn-primary">▶ Run</button>
+          <button class="btn btn-success" onclick="copyText('remove-output')">📋 Copy</button>
+          <button id="remove-clear-btn" class="btn btn-outline">Clear</button>
+        </div>
+      </div>
+      <div id="remove-content" class="tool-seo-content"></div>
+    </div>
+
+    <!-- ======== REPLACE ======== -->
+    <div id="page-replace" class="page-container">
+      <div class="page-heading"><h1>🔄 Replace Tools</h1><p>Find &amp; replace text, replace spaces, newlines and special characters.</p></div>
+      <div class="tabs-wrapper">
+        <div class="tabs" id="replace-tabs">
+          <button class="tab-button" data-tool="find-replace">Search &amp; Replace</button>
+          <button class="tab-button" data-tool="replace-newline-commas">Replace Newline with Commas</button>
+          <button class="tab-button" data-tool="replace-spaces">Replace Spaces</button>
+          <button class="tab-button" data-tool="replace-text-between">Replace Text Between</button>
+        </div>
+      </div>
+      <div class="tool-workspace">
+        <div id="replace-options-container" class="options-row"></div>
+        <div class="io-grid">
+          <div class="io-block"><label>INPUT TEXT</label><textarea id="replace-input" rows="10" placeholder="Paste your text here ..."></textarea></div>
+          <div class="io-block"><label>OUTPUT</label><textarea id="replace-output" rows="10" readonly placeholder="Result appears here ..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button id="replace-run-btn" class="btn btn-primary">▶ Run</button>
+          <button class="btn btn-success" onclick="copyText('replace-output')">📋 Copy</button>
+          <button id="replace-clear-btn" class="btn btn-outline">Clear</button>
+        </div>
+      </div>
+      <div id="replace-content" class="tool-seo-content"></div>
+    </div>
+
+    <!-- ======== CONVERSION ======== -->
+    <div id="page-conversion" class="page-container">
+      <div class="page-heading"><h1>🔁 Conversion Tools</h1><p>Convert between Base64, URL encoding, HTML entities, binary and more.</p></div>
+      <div class="tabs-wrapper">
+        <div class="tabs" id="conversion-tabs">
+          <button class="tab-button" data-tool="base64-decoder">Base64 Decoder</button>
+          <button class="tab-button" data-tool="base64-encoder">Base64 Encoder</button>
+          <button class="tab-button" data-tool="date-conversion">Date Conversion</button>
+          <button class="tab-button" data-tool="decimal-string">Decimal to String</button>
+          <button class="tab-button" data-tool="html-entities">HTML Entities Converter</button>
+          <button class="tab-button" data-tool="string-decimal">String to Decimal</button>
+          <button class="tab-button" data-tool="text-binary">Text To Binary</button>
+          <button class="tab-button" data-tool="url-decode">URL Decode</button>
+          <button class="tab-button" data-tool="url-encode">URL Encode</button>
+        </div>
+      </div>
+      <div class="tool-workspace">
+        <div class="io-grid">
+          <div class="io-block"><label>INPUT</label><textarea id="conversion-input" rows="10" placeholder="Paste your text here ..."></textarea></div>
+          <div class="io-block"><label>OUTPUT</label><textarea id="conversion-output" rows="10" readonly placeholder="Result appears here ..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button id="conversion-convert-btn" class="btn btn-primary">▶ Convert</button>
+          <button class="btn btn-success" onclick="copyText('conversion-output')">📋 Copy</button>
+          <button id="conversion-clear-btn" class="btn btn-outline">Clear</button>
+        </div>
+      </div>
+      <div id="conversion-content" class="tool-seo-content"></div>
+    </div>
+
+    <!-- ======== GENERATORS ======== -->
+    <div id="page-generators" class="page-container">
+      <div class="page-heading"><h1>⚡ Generator Tools</h1><p>Generate lorem ipsum, secure passwords, random data and more instantly.</p></div>
+      <div class="tabs-wrapper">
+        <div class="tabs" id="generators-tabs">
+          <button class="tab-button" data-tool="lorem-ipsum">Lorem Ipsum</button>
+          <button class="tab-button" data-tool="password">Password Generator</button>
+          <button class="tab-button" data-tool="random-color">Random Color</button>
+          <button class="tab-button" data-tool="random-email">Random Email Addresses</button>
+          <button class="tab-button" data-tool="random-date">Random Date</button>
+          <button class="tab-button" data-tool="random-ip">Random IP Address</button>
+          <button class="tab-button" data-tool="random-mac">Random MAC Address</button>
+          <button class="tab-button" data-tool="random-user-agent">Random User Agent</button>
+          <button class="tab-button" data-tool="random-ipv6">Random IPv6 Address</button>
+          <button class="tab-button" data-tool="url-slug">URL Slug Generator</button>
+          <button class="tab-button" data-tool="random-number">Random Number</button>
+          <button class="tab-button" data-tool="sequential-number">Sequential Number</button>
+        </div>
+      </div>
+      <div class="tool-workspace">
+        <div id="generators-options-container" class="options-row"></div>
+        <div class="io-block"><label>GENERATED OUTPUT</label><textarea id="generators-output" rows="12" readonly placeholder="Generated output appears here ..."></textarea></div>
+        <div class="btn-row">
+          <button id="generators-run-btn" class="btn btn-primary">⚡ Generate</button>
+          <button id="generators-copy-btn" class="btn btn-success">📋 Copy</button>
+        </div>
+      </div>
+      <div id="generators-content" class="tool-seo-content"></div>
+    </div>
+
+    <!-- STATIC PAGES -->
+    <div id="page-privacy" class="page-container"></div>
+    <div id="page-terms" class="page-container"></div>
+    <div id="page-contact" class="page-container"></div>
+
+
+    <!-- ======== ENCODE & DECODE ======== -->
+    <div id="page-encode-decode" class="page-container">
+      <div class="page-heading"><h1>🔐 Encode &amp; Decode Tools</h1><p>Convert text between Hex, ASCII, Morse code, Caesar cipher, and generate QR codes.</p></div>
+      <div class="tabs-wrapper">
+        <div class="tabs" id="encode-decode-tabs">
+          <button class="new-tab-btn active" data-ntool="hex-to-text">Hex to Text</button>
+          <button class="new-tab-btn" data-ntool="text-to-hex">Text to Hex</button>
+          <button class="new-tab-btn" data-ntool="ascii-to-text">ASCII to Text</button>
+          <button class="new-tab-btn" data-ntool="text-to-ascii">Text to ASCII</button>
+          <button class="new-tab-btn" data-ntool="morse">Morse Code</button>
+          <button class="new-tab-btn" data-ntool="caesar">Caesar / ROT13</button>
+          <button class="new-tab-btn" data-ntool="qr">QR Code Generator</button>
+        </div>
+      </div>
+
+      <!-- Hex to Text -->
+      <div id="ntool-encode-decode-hex-to-text" class="ntool-area tool-workspace" style="display:block">
+        <div class="io-grid">
+          <div class="io-block"><label>HEX INPUT (e.g. 48 65 6C 6C 6F)</label><textarea id="in-hex-to-text" rows="10" placeholder="48 65 6C 6C 6F 20 57 6F 72 6C 64"></textarea></div>
+          <div class="io-block"><label>TEXT OUTPUT</label><textarea id="out-hex-to-text" rows="10" readonly placeholder="Decoded text appears here..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button id="btn-hex-to-text" class="btn btn-primary">▶ Decode Hex</button>
+          <button class="btn btn-success" id="btn-copy-hex-to-text">📋 Copy</button>
+          <button class="btn btn-outline" id="btn-clear-hex-to-text">Clear</button>
+        </div>
+      
+      <div class="content-section">
+        <h2>About the Hex to Text Converter</h2>
+        <p>The Hex to Text Converter decodes hexadecimal values back into readable ASCII or Unicode text. Hexadecimal (base-16) encoding represents each character as a two-digit hex code from 00 to FF.</p>
+        <p>This tool is essential for developers debugging binary protocols, reading memory dumps, analyzing network packets, and working with low-level data formats.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">Hex to Text Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">48 65 6C 6C 6F 20 57 6F 72 6C 64</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">Hello World</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">What is Hex Encoding?</h3>
+          <p style="margin-bottom:.8rem;">Hexadecimal is a base-16 number system using digits 0-9 and letters A-F. Each byte of data is represented as exactly two hex characters, making it compact and unambiguous.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Common Use Cases</h3>
+          <p style="margin-bottom:.8rem;">Decoding hex strings from debuggers and memory dumps. Reading binary file headers. Analyzing network packet captures. Understanding color codes in web design (#FF5733).</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: Do spaces matter in hex input? A: No, spaces and line breaks between hex pairs are ignored. You can paste with or without separators.</p>
+          <p style="margin-bottom:.8rem;">Q: Is this secure? A: Yes, all processing happens in your browser. No data is sent to any server.</p>
+        </div>
+      </div>
+</div>
+
+      <!-- Text to Hex -->
+      <div id="ntool-encode-decode-text-to-hex" class="ntool-area tool-workspace">
+        <div class="io-grid">
+          <div class="io-block"><label>TEXT INPUT</label><textarea id="in-text-to-hex" rows="10" placeholder="Hello World"></textarea></div>
+          <div class="io-block"><label>HEX OUTPUT</label><textarea id="out-text-to-hex" rows="10" readonly placeholder="48 65 6C 6C 6F..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button id="btn-text-to-hex" class="btn btn-primary">▶ Encode to Hex</button>
+          <button class="btn btn-success" id="btn-copy-text-to-hex">📋 Copy</button>
+          <button class="btn btn-outline" id="btn-clear-text-to-hex">Clear</button>
+        </div>
+      
+      <div class="content-section">
+        <h2>About the Text to Hex Converter</h2>
+        <p>The Text to Hex Converter encodes any text string into its hexadecimal representation. Each character is converted to its ASCII/UTF-8 code point in base-16 format.</p>
+        <p>Developers use this to embed binary data in text formats, create escape sequences, and work with low-level protocols that require hex-encoded data.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">Text to Hex Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">Hello World</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">48 65 6C 6C 6F 20 57 6F 72 6C 64</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">How It Works</h3>
+          <p style="margin-bottom:.8rem;">Each character is first converted to its decimal ASCII code, then to hexadecimal. The letter H (ASCII 72) becomes 48 in hex. Space (ASCII 32) becomes 20.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Use Cases</h3>
+          <p style="margin-bottom:.8rem;">Embedding binary data in XML or JSON. Creating hexdumps of files. Encoding passwords for storage. Working with color values and CSS hex codes.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: Does this support Unicode characters? A: Yes, characters beyond ASCII are converted using their UTF-8 byte representation.</p>
+          <p style="margin-bottom:.8rem;">Q: Can I decode the output back? A: Yes, use the Hex to Text converter to reverse the process.</p>
+        </div>
+      </div>
+</div>
+
+      <!-- ASCII to Text -->
+      <div id="ntool-encode-decode-ascii-to-text" class="ntool-area tool-workspace">
+        <div class="io-grid">
+          <div class="io-block"><label>ASCII CODES (space or comma separated)</label><textarea id="in-ascii-to-text" rows="10" placeholder="72 101 108 108 111 32 87 111 114 108 100"></textarea></div>
+          <div class="io-block"><label>TEXT OUTPUT</label><textarea id="out-ascii-to-text" rows="10" readonly placeholder="Decoded text appears here..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button id="btn-ascii-to-text" class="btn btn-primary">▶ Decode ASCII</button>
+          <button class="btn btn-success" id="btn-copy-ascii-to-text">📋 Copy</button>
+          <button class="btn btn-outline" id="btn-clear-ascii-to-text">Clear</button>
+        </div>
+      
+      <div class="content-section">
+        <h2>About the ASCII to Text Converter</h2>
+        <p>The ASCII to Text Converter decodes a sequence of ASCII decimal codes back into readable text. ASCII (American Standard Code for Information Interchange) maps numbers 0-127 to characters.</p>
+        <p>This tool is useful for decoding data from systems that output character codes as numbers, reading obfuscated strings, and working with legacy text encoding systems.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">ASCII to Text Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">72 101 108 108 111 32 87 111 114 108 100</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">Hello World</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">What is ASCII?</h3>
+          <p style="margin-bottom:.8rem;">ASCII is a 7-bit character encoding standard that assigns numbers 0-127 to letters, digits, punctuation, and control characters. It is the foundation of modern text encoding.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Extended ASCII</h3>
+          <p style="margin-bottom:.8rem;">Standard ASCII covers 128 characters. Extended ASCII (128-255) adds accented characters and special symbols. Our converter handles both ranges.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: What separator should I use between codes? A: Spaces, commas, or semicolons all work. The converter auto-detects the separator.</p>
+          <p style="margin-bottom:.8rem;">Q: What if a code is outside 0-255? A: Values outside valid byte range may produce unexpected characters or be skipped.</p>
+        </div>
+      </div>
+</div>
+
+      <!-- Text to ASCII -->
+      <div id="ntool-encode-decode-text-to-ascii" class="ntool-area tool-workspace">
+        <div class="io-grid">
+          <div class="io-block"><label>TEXT INPUT</label><textarea id="in-text-to-ascii" rows="10" placeholder="Hello World"></textarea></div>
+          <div class="io-block"><label>ASCII CODES OUTPUT</label><textarea id="out-text-to-ascii" rows="10" readonly placeholder="72 101 108 108 111..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button id="btn-text-to-ascii" class="btn btn-primary">▶ Convert to ASCII</button>
+          <button class="btn btn-success" id="btn-copy-text-to-ascii">📋 Copy</button>
+          <button class="btn btn-outline" id="btn-clear-text-to-ascii">Clear</button>
+        </div>
+      
+      <div class="content-section">
+        <h2>About the Text to ASCII Converter</h2>
+        <p>The Text to ASCII Converter converts each character in your text to its corresponding decimal ASCII code. The output is a space-separated list of numbers representing each character.</p>
+        <p>This tool is widely used in programming education, data encoding, cryptography exercises, and debugging character encoding issues.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">Text to ASCII Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">Hello</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">72 101 108 108 111</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">ASCII Code Ranges</h3>
+          <p style="margin-bottom:.8rem;">Control characters: 0-31. Printable characters: 32-126. Space=32, Numbers 48-57, Uppercase A-Z: 65-90, Lowercase a-z: 97-122.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Practical Uses</h3>
+          <p style="margin-bottom:.8rem;">Debugging character encoding issues. Educational programming exercises. Creating checksum inputs. Analyzing text at the byte level for security research.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: Are Unicode characters supported? A: Yes, characters above 127 return their Unicode code point value.</p>
+          <p style="margin-bottom:.8rem;">Q: Can I convert back? A: Yes, use the ASCII to Text tool to reverse the conversion.</p>
+        </div>
+      </div>
+</div>
+
+      <!-- Morse Code -->
+      <div id="ntool-encode-decode-morse" class="ntool-area tool-workspace">
+        <div class="io-grid">
+          <div class="io-block"><label>INPUT (Text OR Morse Code)</label><textarea id="in-morse" rows="10" placeholder="Type text to encode to morse&#10;OR paste morse code (use / between words) to decode"></textarea></div>
+          <div class="io-block"><label>OUTPUT</label><textarea id="out-morse" rows="10" readonly placeholder="Result appears here..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button id="btn-text-to-morse" class="btn btn-primary">▶ Text → Morse</button>
+          <button id="btn-morse-to-text" class="btn btn-primary">▶ Morse → Text</button>
+          <button class="btn btn-success" id="btn-copy-morse">📋 Copy</button>
+          <button class="btn btn-outline" id="btn-clear-morse">Clear</button>
+        </div>
+        <p style="margin-top:12px;font-size:12px;color:var(--text-muted)">Morse format: dots (.) and dashes (-), letters separated by spaces, words separated by /</p>
+      
+      <div class="content-section">
+        <h2>About the Morse Code Translator</h2>
+        <p>The Morse Code Translator converts text to International Morse code and decodes Morse back to text. Morse code represents letters and numbers using combinations of dots (.) and dashes (-).</p>
+        <p>Developed in the 1830s by Samuel Morse, it was the first system to enable long-distance electrical communication and remains in use today for amateur radio, aviation, and emergency signaling.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">Morse Code Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">Hello World</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">.... . .-.. .-.. --- / .-- --- .-. .-.. -..</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">How Morse Code Works</h3>
+          <p style="margin-bottom:.8rem;">Each letter is encoded as a unique sequence of dots and dashes. E is the shortest (one dot). Letters are separated by spaces. Words are separated by /.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Still in Use Today</h3>
+          <p style="margin-bottom:.8rem;">Maritime distress signal SOS (... --- ...) is internationally recognized. Amateur (ham) radio operators use Morse for long-distance communication. Aviation uses it for navigation beacons.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: How do I decode Morse code? A: Paste the Morse code in the input box and click Morse → Text. Words must be separated by /.</p>
+          <p style="margin-bottom:.8rem;">Q: What characters are supported? A: All 26 letters (A-Z), digits 0-9, and common punctuation marks.</p>
+        </div>
+      </div>
+</div>
+
+      <!-- Caesar / ROT13 -->
+      <div id="ntool-encode-decode-caesar" class="ntool-area tool-workspace">
+        <div class="options-row">
+          <div class="opt-group">
+            <label>Shift Amount (ROT13 = 13)</label>
+            <div style="display:flex;align-items:center;gap:12px">
+              <input type="range" id="caesar-shift" min="1" max="25" value="13" style="flex:1;accent-color:var(--primary)">
+              <span id="caesar-shift-label" style="font-size:18px;font-weight:700;color:var(--primary-light);min-width:30px">13</span>
+            </div>
+          </div>
+        </div>
+        <div class="io-grid">
+          <div class="io-block"><label>INPUT TEXT</label><textarea id="in-caesar" rows="10" placeholder="Type your text here..."></textarea></div>
+          <div class="io-block"><label>OUTPUT</label><textarea id="out-caesar" rows="10" readonly placeholder="Result appears here..."></textarea></div>
+        </div>
+        <div class="btn-row">
+          <button id="btn-caesar-encode" class="btn btn-primary">▶ Encode</button>
+          <button id="btn-caesar-decode" class="btn btn-primary">▶ Decode</button>
+          <button class="btn btn-success" id="btn-copy-caesar">📋 Copy</button>
+          <button class="btn btn-outline" id="btn-clear-caesar">Clear</button>
+        </div>
+        <p style="margin-top:12px;font-size:12px;color:var(--text-muted)">ROT13 is Caesar cipher with shift=13. Encoding and decoding ROT13 use the same operation.</p>
+      
+      <div class="content-section">
+        <h2>About the Caesar Cipher / ROT13 Encoder</h2>
+        <p>The Caesar Cipher is one of the oldest and simplest encryption techniques, where each letter in the text is shifted by a fixed number of positions in the alphabet. ROT13 is a special case using a shift of 13.</p>
+        <p>Named after Julius Caesar who used it to protect military messages, it remains a popular educational tool for understanding basic cryptography concepts.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">Caesar Cipher Example (ROT13)</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">Hello World</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">Uryyb Jbeyq</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">How Caesar Cipher Works</h3>
+          <p style="margin-bottom:.8rem;">Each letter is replaced by a letter N positions later in the alphabet. With shift=3: A→D, B→E, Z→C. Numbers and symbols are unchanged.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">ROT13 Special Property</h3>
+          <p style="margin-bottom:.8rem;">ROT13 (shift=13) is its own inverse — encoding and decoding use the same operation. Applying ROT13 twice returns the original text. This makes it perfect for hiding spoilers online.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: Is Caesar cipher secure? A: No. It has only 25 possible keys and can be broken instantly. It is for educational and fun use only, not real security.</p>
+          <p style="margin-bottom:.8rem;">Q: What shift is ROT13? A: ROT13 uses shift=13. Set the slider to 13 and click Encode to apply ROT13.</p>
+        </div>
+      </div>
+</div>
+
+      <!-- QR Code Generator -->
+      <div id="ntool-encode-decode-qr" class="ntool-area tool-workspace">
+        <div class="io-block" style="margin-bottom:16px">
+          <label>TEXT OR URL TO ENCODE</label>
+          <textarea id="in-qr" rows="4" placeholder="https://phrasefixtools.com or any text..."></textarea>
+        </div>
+        <div class="btn-row" style="margin-bottom:20px">
+          <button id="btn-gen-qr" class="btn btn-primary">⚡ Generate QR Code</button>
+          <button id="btn-dl-qr" class="btn btn-success">⬇ Download QR</button>
+          <button id="btn-clear-qr" class="btn btn-outline">Clear</button>
+        </div>
+        <p id="qr-status" style="font-size:13px;color:var(--primary-light);margin-bottom:16px"></p>
+        <div id="qr-output" style="display:flex;justify-content:center;padding:20px;background:var(--bg-input);border-radius:8px;min-height:80px;align-items:center"></div>
+      
+      <div class="content-section">
+        <h2>About the QR Code Generator</h2>
+        <p>The QR Code Generator converts any text, URL, or data into a scannable QR code image. QR (Quick Response) codes are 2D barcodes that smartphones can instantly read using their cameras.</p>
+        <p>Invented in 1994 by Denso Wave for automotive manufacturing, QR codes are now used everywhere for contactless menus, payment systems, website links, contact cards, and product information.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">QR Code Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">https://phrasefixtools.unaux.com</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">[QR Code Image Generated]</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">What Can QR Codes Store?</h3>
+          <p style="margin-bottom:.8rem;">URLs and website links. Plain text and messages. Contact information (vCard). Wi-Fi network credentials. Payment information. Geographic coordinates. App store links.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">QR Code Error Correction</h3>
+          <p style="margin-bottom:.8rem;">QR codes include error correction data allowing them to be read even if up to 30% of the code is damaged or obscured. Our generator uses High (H) error correction for maximum reliability.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: How do I scan a QR code? A: Use your smartphone camera app — it automatically detects and reads QR codes without a separate app on modern phones.</p>
+          <p style="margin-bottom:.8rem;">Q: Is there a size limit? A: QR codes can store up to 4,296 alphanumeric characters. For best scanning, keep URLs and text concise.</p>
+        </div>
+      </div>
+</div>
+    </div>
+
+    <!-- ======== TEXT ANALYSIS ======== -->
+    <div id="page-text-analysis" class="page-container">
+      <div class="page-heading"><h1>📈 Text Analysis &amp; Comparison</h1><p>Analyze, compare, and gain deep insights from your text — readability, sentiment, similarity, and more.</p></div>
+      <div class="tabs-wrapper">
+        <div class="tabs" id="text-analysis-tabs">
+          <button class="new-tab-btn active" data-ntool="word-frequency">Word Frequency</button>
+          <button class="new-tab-btn" data-ntool="keyword-density">Keyword Density</button>
+          <button class="new-tab-btn" data-ntool="readability">Readability Score</button>
+          <button class="new-tab-btn" data-ntool="diff">Text Diff / Compare</button>
+          <button class="new-tab-btn" data-ntool="reading-time">Reading Time</button>
+          <button class="new-tab-btn" data-ntool="syllable">Syllable Counter</button>
+          <button class="new-tab-btn" data-ntool="sentiment">Sentiment Analyzer</button>
+          <button class="new-tab-btn" data-ntool="lang">Language Detector</button>
+          <button class="new-tab-btn" data-ntool="similarity">Text Similarity</button>
+        </div>
+      </div>
+
+      <!-- Word Frequency -->
+      <div id="ntool-text-analysis-word-frequency" class="ntool-area tool-workspace" style="display:block">
+        <div class="io-block" style="margin-bottom:16px">
+          <label>PASTE YOUR TEXT</label>
+          <textarea id="in-word-freq" rows="8" placeholder="Paste your text here to see word frequency analysis..."></textarea>
+        </div>
+        <div class="btn-row" style="margin-bottom:20px">
+          <button id="btn-word-freq" class="btn btn-primary">▶ Analyze</button>
+          <button id="btn-clear-word-freq" class="btn btn-outline">Clear</button>
+        </div>
+        <div id="out-word-freq"></div>
+      
+      <div class="content-section">
+        <h2>About the Word Frequency Counter</h2>
+        <p>The Word Frequency Counter analyzes your text and counts how many times each word appears, then ranks them from most to least frequent. Common stop words (the, a, and, etc.) are filtered out to focus on meaningful content words.</p>
+        <p>Word frequency analysis is a fundamental technique in computational linguistics, content marketing, SEO optimization, and academic text research.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">Word Frequency Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">The quick brown fox jumps over the lazy dog</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">fox: 1, quick: 1, brown: 1, jumps: 1, lazy: 1, dog: 1</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Uses in SEO and Content</h3>
+          <p style="margin-bottom:.8rem;">Identify your most-used keywords to check if your content is on-topic. Find keyword stuffing or keyword gaps. Understand the dominant themes in your writing.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Uses in Research</h3>
+          <p style="margin-bottom:.8rem;">Analyze word patterns in literature. Compare vocabulary richness across documents. Study language use in surveys and feedback forms.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: What are stop words? A: Common words like "the", "and", "is" that carry little meaning. These are filtered to focus on content words.</p>
+          <p style="margin-bottom:.8rem;">Q: How many words are shown? A: Top 50 most frequent words are displayed with visual frequency bars.</p>
+        </div>
+      </div>
+</div>
+
+      <!-- Keyword Density -->
+      <div id="ntool-text-analysis-keyword-density" class="ntool-area tool-workspace">
+        <div class="io-block" style="margin-bottom:16px">
+          <label>PASTE YOUR TEXT</label>
+          <textarea id="in-kd" rows="8" placeholder="Paste your article or content here..."></textarea>
+        </div>
+        <div class="btn-row" style="margin-bottom:20px">
+          <button id="btn-keyword-density" class="btn btn-primary">▶ Analyze Density</button>
+          <button id="btn-clear-kd" class="btn btn-outline">Clear</button>
+        </div>
+        <div id="out-kd"></div>
+      
+      <div class="content-section">
+        <h2>About the Keyword Density Checker</h2>
+        <p>Keyword Density is the percentage of times a specific keyword appears in your text compared to the total word count. It is calculated as: (keyword count / total words) × 100.</p>
+        <p>SEO professionals use keyword density to ensure content is optimized for search engines without over-using keywords (keyword stuffing), which can lead to search engine penalties.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">Keyword Density Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">100-word article about "SEO" appearing 5 times</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">SEO: 5 occurrences = 5% density</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Ideal Keyword Density</h3>
+          <p style="margin-bottom:.8rem;">Most SEO experts recommend 1-3% keyword density for primary keywords. Over 5% is considered keyword stuffing and may harm rankings. Natural writing typically falls in the optimal range.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">How to Use This Tool</h3>
+          <p style="margin-bottom:.8rem;">Paste your article, then check the density table. If your target keyword appears too rarely, add it naturally. If it appears too often, vary your phrasing with synonyms and related terms.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: What is keyword stuffing? A: Using a keyword too frequently (typically over 5%) in an unnatural way to manipulate search rankings. Search engines penalize this practice.</p>
+          <p style="margin-bottom:.8rem;">Q: Should I include stop words? A: No. Stop words like "the" and "a" always have high density. Focus on meaningful keywords in your content.</p>
+        </div>
+      </div>
+</div>
+
+      <!-- Readability Score -->
+      <div id="ntool-text-analysis-readability" class="ntool-area tool-workspace">
+        <div class="io-block" style="margin-bottom:16px">
+          <label>PASTE YOUR TEXT</label>
+          <textarea id="in-readability" rows="8" placeholder="Paste your content to check readability score (Flesch-Kincaid)..."></textarea>
+        </div>
+        <div class="btn-row" style="margin-bottom:20px">
+          <button id="btn-readability" class="btn btn-primary">▶ Check Readability</button>
+          <button id="btn-clear-readability" class="btn btn-outline">Clear</button>
+        </div>
+        <div id="out-readability"></div>
+      
+      <div class="content-section">
+        <h2>About the Readability Score Checker</h2>
+        <p>The Readability Score Checker measures how easy your text is to read using the Flesch-Kincaid Reading Ease formula. Scores range from 0-100, where higher scores indicate easier reading.</p>
+        <p>Used by publishers, educators, and content marketers to ensure writing is appropriate for the target audience, from children's books to academic papers.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">Readability Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">Complex academic text with long sentences and technical vocabulary</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">Flesch Score: 35/100 — Difficult (College level)</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Flesch Reading Ease Scale</h3>
+          <p style="margin-bottom:.8rem;">90-100: Very Easy (5th grade). 70-90: Easy (6th-7th grade). 60-70: Standard (8th-9th grade). 50-60: Hard (10th-12th grade). 30-50: Difficult (College). 0-30: Very Difficult (Professional).</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Improving Readability</h3>
+          <p style="margin-bottom:.8rem;">Use shorter sentences (aim for 15-20 words). Choose simpler words. Break complex ideas into bullet points. Use active voice. Add subheadings to organize content.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: What readability score should I aim for? A: Blogs and articles: 60-70. Business writing: 50-60. Academic content: 30-50. Children's content: 80+.</p>
+          <p style="margin-bottom:.8rem;">Q: What is Flesch-Kincaid Grade Level? A: It estimates the US school grade level needed to understand the text. Grade 8 means an 8th grader can read it.</p>
+        </div>
+      </div>
+</div>
+
+      <!-- Text Diff -->
+      <div id="ntool-text-analysis-diff" class="ntool-area tool-workspace">
+        <div class="io-grid" style="margin-bottom:16px">
+          <div class="io-block"><label>ORIGINAL TEXT</label><textarea id="in-diff-a" rows="10" placeholder="Paste original text here..."></textarea></div>
+          <div class="io-block"><label>MODIFIED TEXT</label><textarea id="in-diff-b" rows="10" placeholder="Paste modified text here..."></textarea></div>
+        </div>
+        <div class="btn-row" style="margin-bottom:16px">
+          <button id="btn-diff" class="btn btn-primary">▶ Compare</button>
+          <button id="btn-clear-diff" class="btn btn-outline">Clear</button>
+        </div>
+        <p id="diff-stats" style="font-size:13px;color:var(--primary-light);margin-bottom:12px"></p>
+        <div id="out-diff" style="background:var(--bg-input);border:1px solid var(--border-light);border-radius:8px;padding:16px;max-height:400px;overflow-y:auto"></div>
+      
+      <div class="content-section">
+        <h2>About the Text Diff / Compare Tool</h2>
+        <p>The Text Diff tool compares two versions of text line by line, highlighting additions (green), deletions (red), and unchanged lines. This type of comparison is fundamental in software development and document editing.</p>
+        <p>Based on the Longest Common Subsequence (LCS) algorithm, the same algorithm used by Git and professional diff tools to show what changed between file versions.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">Text Diff Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">Original: "The quick brown fox"
+Modified: "The slow brown fox"</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">- The quick brown fox
++ The slow brown fox</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">How Diff Works</h3>
+          <p style="margin-bottom:.8rem;">The LCS algorithm finds the longest sequence of lines common to both texts. Lines only in the original are marked as deleted. Lines only in the modified version are marked as added.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Common Uses</h3>
+          <p style="margin-bottom:.8rem;">Comparing document revisions. Reviewing code changes. Checking contract amendments. Spotting unauthorized changes. Comparing translation versions.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: Is this the same as git diff? A: It uses the same LCS algorithm as git diff, giving similar results for line-by-line text comparison.</p>
+          <p style="margin-bottom:.8rem;">Q: Does it compare character-by-character? A: Currently it compares line by line. For character-level diff, enable word-wrap before comparing.</p>
+        </div>
+      </div>
+</div>
+
+      <!-- Reading Time -->
+      <div id="ntool-text-analysis-reading-time" class="ntool-area tool-workspace">
+        <div class="io-block" style="margin-bottom:16px">
+          <label>PASTE YOUR TEXT (updates live as you type)</label>
+          <textarea id="in-reading-time" rows="10" placeholder="Paste your article, blog post or speech here..."></textarea>
+        </div>
+        <div class="btn-row" style="margin-bottom:20px">
+          <button id="btn-clear-reading-time" class="btn btn-outline">Clear</button>
+        </div>
+        <div id="out-reading-time"></div>
+      
+      <div class="content-section">
+        <h2>About the Reading Time Calculator</h2>
+        <p>The Reading Time Calculator estimates how long it takes an average person to read your text. It uses the widely-accepted average reading speed of 238 words per minute for silent reading, and 130 WPM for speaking.</p>
+        <p>Knowing reading time helps writers calibrate article length, speakers prepare presentations, and podcasters estimate episode duration.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">Reading Time Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">1,000-word blog post</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">Reading: ~4 min | Speaking: ~7 min</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Average Reading Speeds</h3>
+          <p style="margin-bottom:.8rem;">Silent reading: 238 words per minute (adult average). Speed readers: 400-700 WPM. Audiobooks: 150-160 WPM. Presentations: 125-150 WPM. Casual conversation: 120-180 WPM.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Content Length Guidelines</h3>
+          <p style="margin-bottom:.8rem;">Blog posts: 1,500-2,500 words (6-10 min read). News articles: 300-600 words (1-2 min). Email newsletters: 200-300 words (under 2 min). Long-form guides: 3,000-10,000 words (12-40 min).</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: Why are reading and speaking times different? A: Silent reading is faster than speaking. Reading speed is ~238 WPM while speaking averages ~130 WPM.</p>
+          <p style="margin-bottom:.8rem;">Q: Does the tool account for complex vocabulary? A: The estimate is based on word count. Dense technical content typically takes longer than the estimate.</p>
+        </div>
+      </div>
+</div>
+
+      <!-- Syllable Counter -->
+      <div id="ntool-text-analysis-syllable" class="ntool-area tool-workspace">
+        <div class="io-block" style="margin-bottom:16px">
+          <label>PASTE YOUR TEXT</label>
+          <textarea id="in-syllable" rows="8" placeholder="Paste text to count syllables in each word..."></textarea>
+        </div>
+        <div class="btn-row" style="margin-bottom:12px">
+          <button id="btn-syllable" class="btn btn-primary">▶ Count Syllables</button>
+          <button id="btn-clear-syllable" class="btn btn-outline">Clear</button>
+        </div>
+        <p id="out-syllable-stats" style="font-size:14px;color:var(--primary-light);margin-bottom:12px;font-weight:600"></p>
+        <div id="out-syllable" style="line-height:2"></div>
+      
+      <div class="content-section">
+        <h2>About the Syllable Counter</h2>
+        <p>The Syllable Counter counts the number of syllables in each word of your text. Syllables are the basic phonetic units of words — individual vowel sounds that form the rhythm of speech.</p>
+        <p>Syllable counting is essential for poetry writing, readability analysis, speech therapy, language learning, and song lyric composition.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">Syllable Counter Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">beautiful → beau-ti-ful</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">3 syllables</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">How Syllables Are Counted</h3>
+          <p style="margin-bottom:.8rem;">Syllables are typically counted by the number of vowel sounds (not vowel letters). "Beautiful" has 3 syllables (beau-ti-ful). "Queue" has 1 syllable despite 4 vowels.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Uses for Syllable Counting</h3>
+          <p style="margin-bottom:.8rem;">Writing haiku and other poetry with syllable requirements. Checking readability (more syllables = harder to read). Song writing where syllables affect rhythm. Speech therapy exercises.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: How accurate is the syllable count? A: The tool uses a rule-based algorithm that handles most English words correctly. Irregular words and proper nouns may occasionally be miscounted.</p>
+          <p style="margin-bottom:.8rem;">Q: What is a haiku? A: A Japanese poem format with 3 lines: 5 syllables, 7 syllables, 5 syllables. Use this tool to verify your haiku syllable counts.</p>
+        </div>
+      </div>
+</div>
+
+      <!-- Sentiment Analyzer -->
+      <div id="ntool-text-analysis-sentiment" class="ntool-area tool-workspace">
+        <div class="io-block" style="margin-bottom:16px">
+          <label>PASTE YOUR TEXT</label>
+          <textarea id="in-sentiment" rows="8" placeholder="Paste a review, article, or any text to analyze its sentiment..."></textarea>
+        </div>
+        <div class="btn-row" style="margin-bottom:20px">
+          <button id="btn-sentiment" class="btn btn-primary">▶ Analyze Sentiment</button>
+          <button id="btn-clear-sentiment" class="btn btn-outline">Clear</button>
+        </div>
+        <div id="out-sentiment"></div>
+      
+      <div class="content-section">
+        <h2>About the Sentiment Analyzer</h2>
+        <p>The Sentiment Analyzer determines whether text expresses positive, negative, or neutral sentiment. It uses a lexicon-based approach, comparing words against curated lists of positive and negative terms.</p>
+        <p>Sentiment analysis is a core technique in natural language processing (NLP) used for brand monitoring, customer feedback analysis, social media listening, and market research.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">Sentiment Analysis Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">"This product is absolutely amazing and works perfectly!"</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">😊 Positive (+80%)</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">How Sentiment Analysis Works</h3>
+          <p style="margin-bottom:.8rem;">Our tool uses a word-matching approach: each word is checked against positive and negative word lists. The ratio of positive to negative words determines the overall sentiment score.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Business Applications</h3>
+          <p style="margin-bottom:.8rem;">Analyzing customer reviews and feedback. Monitoring brand mentions on social media. Evaluating employee survey responses. Tracking public opinion on news topics.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: How accurate is the analysis? A: Our lexicon-based approach works well for straightforward text. Sarcasm, irony, and negation ("not good") may reduce accuracy.</p>
+          <p style="margin-bottom:.8rem;">Q: What languages are supported? A: Currently English only. The word lists are English-language sentiment dictionaries.</p>
+        </div>
+      </div>
+</div>
+
+      <!-- Language Detector -->
+      <div id="ntool-text-analysis-lang" class="ntool-area tool-workspace">
+        <div class="io-block" style="margin-bottom:16px">
+          <label>PASTE YOUR TEXT</label>
+          <textarea id="in-lang" rows="8" placeholder="Paste text in any language to detect it..."></textarea>
+        </div>
+        <div class="btn-row" style="margin-bottom:20px">
+          <button id="btn-detect-lang" class="btn btn-primary">▶ Detect Language</button>
+          <button id="btn-clear-lang" class="btn btn-outline">Clear</button>
+        </div>
+        <div id="out-lang"></div>
+      
+      <div class="content-section">
+        <h2>About the Language Detector</h2>
+        <p>The Language Detector identifies the language of your text using statistical analysis of common stop words. It compares your text against frequency patterns of common words in 8 languages.</p>
+        <p>Language detection is the first step in many NLP pipelines, enabling automatic routing to language-specific processing, translation, and content categorization.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">Language Detection Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">"Le chat est sur la table" (French text)</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">Detected: French (high confidence)</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">How Language Detection Works</h3>
+          <p style="margin-bottom:.8rem;">The tool analyzes which common words (stop words like "the", "de", "und") appear most frequently in your text. Each language has distinctive stop words that rarely appear in other languages.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Supported Languages</h3>
+          <p style="margin-bottom:.8rem;">English, Spanish, French, German, Italian, Portuguese, Dutch, and Turkish. Detection is most accurate for longer texts (20+ words) with common vocabulary.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: How long should the text be for accurate detection? A: At least 20-30 words for reliable results. Very short texts or texts with many proper nouns may give less accurate results.</p>
+          <p style="margin-bottom:.8rem;">Q: Can it detect mixed languages? A: The tool reports the dominant language. Mixed-language texts will show the language with the most matching stop words.</p>
+        </div>
+      </div>
+</div>
+
+      <!-- Text Similarity -->
+      <div id="ntool-text-analysis-similarity" class="ntool-area tool-workspace">
+        <div class="io-grid" style="margin-bottom:16px">
+          <div class="io-block"><label>TEXT 1</label><textarea id="in-sim-a" rows="10" placeholder="Paste first text here..."></textarea></div>
+          <div class="io-block"><label>TEXT 2</label><textarea id="in-sim-b" rows="10" placeholder="Paste second text here..."></textarea></div>
+        </div>
+        <div class="btn-row" style="margin-bottom:20px">
+          <button id="btn-similarity" class="btn btn-primary">▶ Compare Similarity</button>
+          <button id="btn-clear-sim" class="btn btn-outline">Clear</button>
+        </div>
+        <div id="out-similarity"></div>
+      
+      <div class="content-section">
+        <h2>About the Text Similarity Checker</h2>
+        <p>The Text Similarity Checker compares two texts and calculates their similarity as a percentage using two algorithms: Jaccard Similarity (word overlap) and Cosine Similarity (vector-based comparison).</p>
+        <p>Text similarity is fundamental in plagiarism detection, document clustering, recommendation systems, and information retrieval.</p>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem;color:var(--primary-color);">Text Similarity Example</h3>
+          <div style="margin-bottom:.5rem;">
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">Before</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">Text 1: "The quick brown fox"
+Text 2: "The quick red fox"</div>
+          </div>
+          <div>
+            <span style="font-weight:600;font-size:.85rem;color:var(--text-light);display:block;margin-bottom:.25rem;">After</span>
+            <div style="background:rgba(16,185,129,.1);padding:.75rem;border-radius:4px;font-family:monospace;overflow-x:auto;">Jaccard: 75% | Cosine: 87%</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--bg-light);padding:1rem;border-radius:8px;border:1px solid var(--border-color);">
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Jaccard vs Cosine Similarity</h3>
+          <p style="margin-bottom:.8rem;">Jaccard measures the ratio of shared words to all unique words. Cosine similarity measures the angle between text vectors, giving more weight to word frequency. Both give values from 0% (no similarity) to 100% (identical).</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">Practical Applications</h3>
+          <p style="margin-bottom:.8rem;">Detecting plagiarism in academic work. Finding duplicate content in databases. Checking if two documents discuss the same topic. Matching customer queries to support articles.</p>
+          <h3 style="font-size:1.1rem;margin-top:1rem;margin-bottom:.5rem;color:var(--primary-color);">FAQs</h3>
+          <p style="margin-bottom:.8rem;">Q: What score indicates plagiarism? A: Generally 70%+ Jaccard similarity on substantial texts suggests significant overlap. Context matters — compare with a plagiarism threshold appropriate to your use case.</p>
+          <p style="margin-bottom:.8rem;">Q: Does it consider word order? A: No. Both algorithms treat text as a "bag of words" without considering word order or grammar.</p>
+        </div>
+      </div>
+</div>
+
+    </div>
+
+  </main>
+</div><!-- /#app -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="logo-icon"></span><span>PhraseFixTools</span></div>
+        <p class="footer-tagline">Your trusted collection of free online tools for everyday tasks. Format code, count text, and boost your productivity.</p>
+      </div>
+      <nav class="footer-links">
+        <button class="footer-nav-link" data-navigate="privacy">Privacy Policy</button>
+        <button class="footer-nav-link" data-navigate="terms">Terms of Service</button>
+        <button class="footer-nav-link" data-navigate="contact">Contact Us</button>
+      </nav>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom"><p>© 2025 PhraseFixTools. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Back to top">↑</button>
+
+<script>
+  /* ── Copy helper ── */
+  function copyText(id) {
+    const el = document.getElementById(id);
+    if (!el || !el.value) return;
+    navigator.clipboard.writeText(el.value).catch(() => { el.select(); document.execCommand('copy'); });
+  }
+
+  /* ========= HOME PAGE — search & category filter ========= */
+
+  function homeSearch() {
+    var q = (document.getElementById('home-search').value || '').toLowerCase().trim();
+    // reset category buttons
+    document.querySelectorAll('.cat-filter').forEach(function(b){ b.classList.remove('active'); });
+    var allBtn = document.querySelector('.cat-filter[data-cat="all"]');
+    if (allBtn) allBtn.classList.add('active');
+
+    var cards = document.querySelectorAll('#all-tools-grid .tool-card-home');
+    cards.forEach(function(card) {
+      var name = card.querySelector('h3') ? card.querySelector('h3').textContent.toLowerCase() : '';
+      var desc = card.querySelector('p')  ? card.querySelector('p').textContent.toLowerCase()  : '';
+      card.style.display = (q === '' || name.includes(q) || desc.includes(q)) ? '' : 'none';
+    });
+    if (q.length > 0) {
+      var grid = document.getElementById('all-tools-grid');
+      if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function filterHome(btn, cat) {
+    document.querySelectorAll('.cat-filter').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    var cards = document.querySelectorAll('#all-tools-grid .tool-card-home');
+    cards.forEach(function(card) {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+    });
+    var si = document.getElementById('home-search');
+    if (si) si.value = '';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var si = document.getElementById('home-search');
+    if (si) si.addEventListener('keypress', function(e){ if (e.key === 'Enter') homeSearch(); });
+  });
+</script>
+
+<script type="module" src="/js/app.js?v=1"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script defer src="/js/new-tools.js?v=1"></script>
+<script>
+(function(){
+  var page='conversion', tool='base64-decoder', tries=0;
+  var iv=setInterval(function(){
+    var nav=document.querySelector('.nav-link[data-navigate="'+page+'"]');
+    if(nav){
+      nav.click();
+      setTimeout(function(){
+        var tab=document.querySelector('#'+page+'-tabs .tab-button[data-tool="'+tool+'"]');
+        if(tab) tab.click();
+        window.scrollTo({top:0,behavior:'smooth'});
+      },300);
+      clearInterval(iv);
+    }
+    if(++tries>30) clearInterval(iv);
+  },100);
+})();
+</script>
+</body>
+</html>
