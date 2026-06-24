@@ -226,7 +226,7 @@
             sections: [
               {
                 heading: 'Welcome',
-                paragraphs: ['Welcome to Phrase Fix Tools (https://phrasefixtools.unaux.com/). Your privacy is important to us. This Privacy Policy document outlines the types of information that is collected and recorded by our website and how we use it.']
+                paragraphs: ['Welcome to Phrase Fix Tools (https://phrasefixtools.com/). Your privacy is important to us. This Privacy Policy document outlines the types of information that is collected and recorded by our website and how we use it.']
               },
               {
                 heading: '1. Information We Collect',
@@ -270,7 +270,7 @@
               },
               {
                 heading: '10. Contact Us',
-                paragraphs: ['If you have any questions about this Privacy Policy, you can contact us:', '• Email: [your-email@example.com](mailto:your-email@example.com)', '• Website: https://phrasefixtools.unaux.com/']
+                paragraphs: ['If you have any questions about this Privacy Policy, you can contact us:', '• Email: contact@phrasefixtools.com', '• Website: https://phrasefixtools.com/']
               }
             ]
           },
@@ -281,7 +281,7 @@
             sections: [
               {
                 heading: 'Welcome',
-                paragraphs: ['Welcome to PhraseFixTools (https://phrasefixtools.unaux.com/). By accessing or using our website, you agree to comply with and be bound by the following Terms of Service. If you do not agree to these terms, please do not use our services.']
+                paragraphs: ['Welcome to PhraseFixTools (https://phrasefixtools.com/). By accessing or using our website, you agree to comply with and be bound by the following Terms of Service. If you do not agree to these terms, please do not use our services.']
               },
               {
                 heading: '1. Acceptance of Terms',

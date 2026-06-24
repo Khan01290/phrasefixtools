@@ -4,4 +4,4 @@ Disallow: /seo/
 Disallow: /js/
 Disallow: /css/
 
-Sitemap: https://phrasefixtools.unaux.com/sitemap.xml
+Sitemap: https://phrasefixtools.com/sitemap.xml
