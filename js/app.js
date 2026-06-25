@@ -2254,23 +2254,43 @@
             // Mobile Menu
             function buildMobileMenu() {
                 let html = '<div class="mobile-nav-links">';
+
+                // Label
+                html += '<h4>TOOLS</h4>';
+
                 navItems.forEach(item => {
-                    html += `<details><summary>${item.page.charAt(0).toUpperCase() + item.page.slice(1)}</summary>`;
+                    const label = item.page.charAt(0).toUpperCase() + item.page.slice(1).replace(/-/g, ' ');
+                    html += `<details><summary>${label}</summary>`;
                     item.tools.forEach(tool => {
                         html += `<button class="dropdown-item" data-navigate="${item.page}" data-tool="${tool.tool}">${tool.name}</button>`;
                     });
                     html += `</details>`;
                 });
+
+                // Add new-style pages
+                html += '<h4>MORE TOOLS</h4>';
+                html += `<details><summary>Encode &amp; Decode</summary>
+                    <button class="dropdown-item" data-navigate="encode-decode" data-ntool="hex-to-text">Hex to Text</button>
+                    <button class="dropdown-item" data-navigate="encode-decode" data-ntool="text-to-hex">Text to Hex</button>
+                    <button class="dropdown-item" data-navigate="encode-decode" data-ntool="ascii-to-text">ASCII to Text</button>
+                    <button class="dropdown-item" data-navigate="encode-decode" data-ntool="text-to-ascii">Text to ASCII</button>
+                    <button class="dropdown-item" data-navigate="encode-decode" data-ntool="morse">Morse Code</button>
+                    <button class="dropdown-item" data-navigate="encode-decode" data-ntool="caesar">Caesar Cipher</button>
+                    <button class="dropdown-item" data-navigate="encode-decode" data-ntool="qr">QR Code Generator</button>
+                </details>`;
+                html += `<details><summary>Text Analysis</summary>
+                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="word-frequency">Word Frequency</button>
+                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="keyword-density">Keyword Density</button>
+                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="readability">Readability Score</button>
+                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="diff">Text Diff</button>
+                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="reading-time">Reading Time</button>
+                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="syllable">Syllable Counter</button>
+                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="sentiment">Sentiment Analyzer</button>
+                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="lang">Language Detector</button>
+                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="similarity">Text Similarity</button>
+                </details>`;
+
                 html += '</div>';
-                
-                html += `
-                    <div class="mobile-nav-static-links">
-                        <a href="#" data-navigate="privacy">Privacy Policy</a>
-                        <a href="#" data-navigate="terms">Terms of Service</a>
-                        <a href="#" data-navigate="contact">Contact Us</a>
-                    </div>
-                `;
-                
                 mobileNavContent.innerHTML = html;
             }
             buildMobileMenu();

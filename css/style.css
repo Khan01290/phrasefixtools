@@ -338,8 +338,17 @@ a { color:var(--primary-light); text-decoration:none; }
 #mobile-nav-overlay.active, #mobile-nav-overlay.open { display:block; }
 #mobile-nav-close { position:absolute; top:14px; right:14px; background:none; border:none; font-size:22px; cursor:pointer; color:var(--text); }
 .mobile-nav-links h4 { font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); padding:16px 18px 6px; }
-.mobile-nav-links .nav-link { display:flex; align-items:center; gap:10px; width:100%; padding:10px 18px; font-size:14px; color:var(--text); background:none; border:none; cursor:pointer; text-align:left; border-radius:8px; margin:1px 8px; width:calc(100% - 16px); transition:background var(--tr); }
+.mobile-nav-links details { border-bottom:1px solid var(--border); }
+.mobile-nav-links details summary { padding:12px 18px; font-size:14px; font-weight:600; color:var(--text); cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; }
+.mobile-nav-links details summary::-webkit-details-marker { display:none; }
+.mobile-nav-links details summary::after { content:'›'; font-size:18px; color:var(--text-muted); transition:transform .2s; }
+.mobile-nav-links details[open] summary::after { transform:rotate(90deg); }
+.mobile-nav-links details summary:hover { color:var(--primary-light); background:var(--bg-hover); }
+.mobile-nav-links .dropdown-item { display:block; width:100%; padding:9px 28px; font-size:13px; color:var(--text-light); background:none; border:none; cursor:pointer; text-align:left; transition:all var(--tr); }
+.mobile-nav-links .dropdown-item:hover { color:var(--primary-light); background:var(--bg-hover); padding-left:34px; }
+.mobile-nav-links .nav-link { display:flex; align-items:center; gap:10px; width:100%; padding:10px 18px; font-size:14px; color:var(--text); background:none; border:none; cursor:pointer; text-align:left; transition:background var(--tr); }
 .mobile-nav-links .nav-link:hover, .mobile-nav-links .nav-link.active { background:var(--bg-hover); color:var(--primary-light); }
+.mobile-nav-static-links { display:none; }
 .dropdown-item { display:block; width:100%; padding:9px 20px; background:none; border:none; text-align:left; cursor:pointer; color:var(--text-light); font-size:13px; transition:all var(--tr); }
 .dropdown-item:hover { color:var(--primary-light); background:rgba(124,58,237,.07); }
 
