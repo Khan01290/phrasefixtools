@@ -352,7 +352,7 @@
     </div>
 
     <!-- ======== SPECIAL EFFECTS ======== -->
-    <div id="page-special-effects" class="page-container">
+    <div id="page-special-effects" class="page-container" style="display:block">
       <div class="page-heading"><h1>💫 Special Effects</h1><p>Create bold, italic, flipped, reversed and upside-down text for social media.</p></div>
       <div class="tabs-wrapper">
         <div class="tabs" id="special-effects-tabs">
@@ -1329,6 +1329,17 @@ Text 2: "The quick red fox"</div>
   });
 </script>
 
+<script>
+// Pre-show the correct page for SEO — before app.js runs
+document.addEventListener('DOMContentLoaded', function() {
+  // Show correct page immediately
+  var pg = document.getElementById('page-special-effects');
+  if (pg) pg.style.display = 'block';
+  // Activate correct tab
+  var tab = document.querySelector('#'+'special-effects'+'-tabs .tab-button[data-tool="slashed"]');
+  if (tab) tab.classList.add('active');
+});
+</script>
 <script type="module" src="/js/app.js?v=1"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script defer src="/js/new-tools.js?v=1"></script>

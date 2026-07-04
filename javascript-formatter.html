@@ -287,7 +287,7 @@
     </div>
 
     <!-- ======== FORMATTER ======== -->
-    <div id="page-formatter" class="page-container">
+    <div id="page-formatter" class="page-container" style="display:block">
       <div class="page-heading"><h1>✨ Code Formatters</h1><p>Beautify and format JSON, HTML, CSS, JavaScript and SQL instantly.</p></div>
       <div class="tabs-wrapper">
         <div class="tabs" id="formatter-tabs">
@@ -1329,6 +1329,17 @@ Text 2: "The quick red fox"</div>
   });
 </script>
 
+<script>
+// Pre-show the correct page for SEO — before app.js runs
+document.addEventListener('DOMContentLoaded', function() {
+  // Show correct page immediately
+  var pg = document.getElementById('page-formatter');
+  if (pg) pg.style.display = 'block';
+  // Activate correct tab
+  var tab = document.querySelector('#'+'formatter'+'-tabs .tab-button[data-tool="javascript"]');
+  if (tab) tab.classList.add('active');
+});
+</script>
 <script type="module" src="/js/app.js?v=1"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script defer src="/js/new-tools.js?v=1"></script>

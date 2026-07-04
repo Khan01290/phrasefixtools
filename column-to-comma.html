@@ -313,7 +313,7 @@
     </div>
 
     <!-- ======== MODIFY ======== -->
-    <div id="page-modify" class="page-container">
+    <div id="page-modify" class="page-container" style="display:block">
       <div class="page-heading"><h1>✏️ Modify Text</h1><p>Add prefix, suffix, line numbers and more to your text in one click.</p></div>
       <div class="tabs-wrapper">
         <div class="tabs" id="modify-tabs">
@@ -1329,6 +1329,17 @@ Text 2: "The quick red fox"</div>
   });
 </script>
 
+<script>
+// Pre-show the correct page for SEO — before app.js runs
+document.addEventListener('DOMContentLoaded', function() {
+  // Show correct page immediately
+  var pg = document.getElementById('page-modify');
+  if (pg) pg.style.display = 'block';
+  // Activate correct tab
+  var tab = document.querySelector('#'+'modify'+'-tabs .tab-button[data-tool="column-to-comma"]');
+  if (tab) tab.classList.add('active');
+});
+</script>
 <script type="module" src="/js/app.js?v=1"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script defer src="/js/new-tools.js?v=1"></script>

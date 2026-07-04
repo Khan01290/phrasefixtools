@@ -270,7 +270,7 @@
     </div>
 
     <!-- ======== COUNTER ======== -->
-    <div id="page-counter" class="page-container">
+    <div id="page-counter" class="page-container" style="display:block">
       <div class="page-heading"><h1>🔢 Text Counters</h1><p>Count words, characters, lines, brackets and more with precision.</p></div>
       <div class="tabs-wrapper">
         <div class="tabs" id="counter-tabs">
@@ -1329,6 +1329,17 @@ Text 2: "The quick red fox"</div>
   });
 </script>
 
+<script>
+// Pre-show the correct page for SEO — before app.js runs
+document.addEventListener('DOMContentLoaded', function() {
+  // Show correct page immediately
+  var pg = document.getElementById('page-counter');
+  if (pg) pg.style.display = 'block';
+  // Activate correct tab
+  var tab = document.querySelector('#'+'counter'+'-tabs .tab-button[data-tool="bracket-tag"]');
+  if (tab) tab.classList.add('active');
+});
+</script>
 <script type="module" src="/js/app.js?v=1"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script defer src="/js/new-tools.js?v=1"></script>
