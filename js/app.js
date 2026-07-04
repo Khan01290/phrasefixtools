@@ -170,54 +170,13 @@
           }
         ];
 
-        // New-style pages (encode-decode, text-analysis) use data-ntool instead of data-tool
-        const newToolPages = [
-          {
-            page: 'encode-decode',
-            tools: [
-              { name: 'Hex to Text', ntool: 'hex-to-text' },
-              { name: 'Text to Hex', ntool: 'text-to-hex' },
-              { name: 'ASCII to Text', ntool: 'ascii-to-text' },
-              { name: 'Text to ASCII', ntool: 'text-to-ascii' },
-              { name: 'Morse Code Translator', ntool: 'morse' },
-              { name: 'Caesar Cipher ROT13', ntool: 'caesar' },
-              { name: 'QR Code Generator', ntool: 'qr' },
-            ]
-          },
-          {
-            page: 'text-analysis',
-            tools: [
-              { name: 'Word Frequency Counter', ntool: 'word-frequency' },
-              { name: 'Keyword Density Checker', ntool: 'keyword-density' },
-              { name: 'Readability Score', ntool: 'readability' },
-              { name: 'Text Diff Compare', ntool: 'diff' },
-              { name: 'Reading Time Calculator', ntool: 'reading-time' },
-              { name: 'Syllable Counter', ntool: 'syllable' },
-              { name: 'Sentiment Analyzer', ntool: 'sentiment' },
-              { name: 'Language Detector', ntool: 'lang' },
-              { name: 'Text Similarity Checker', ntool: 'similarity' },
-            ]
-          }
-        ];
-
-        const allTools = [
-          ...navItems.flatMap(item =>
-            item.tools.map(tool => ({
-              name: tool.name,
-              tool: tool.tool,
-              page: item.page,
-              ntool: null,
-            }))
-          ),
-          ...newToolPages.flatMap(item =>
-            item.tools.map(tool => ({
-              name: tool.name,
-              tool: null,
-              page: item.page,
-              ntool: tool.ntool,
-            }))
-          )
-        ];
+        const allTools = navItems.flatMap(item =>
+          item.tools.map(tool => ({
+            name: tool.name,
+            tool: tool.tool,
+            page: item.page,
+          }))
+        );
 
         const staticPageContent = {
           privacy: {
@@ -270,7 +229,7 @@
               },
               {
                 heading: '10. Contact Us',
-                paragraphs: ['If you have any questions about this Privacy Policy, you can contact us:', '• Email: contact@phrasefixtools.com', '• Website: https://phrasefixtools.com/']
+                paragraphs: ['If you have any questions about this Privacy Policy, you can contact us:', '• Email: [your-email@example.com](mailto:your-email@example.com)', '• Website: https://phrasefixtools.com/']
               }
             ]
           },
@@ -1896,7 +1855,7 @@
                 document.title = `${title} | PhraseFixTools`;
             }
 
-            function navigateTo(pageId, toolId = null, replaceHistory = false, ntoolId = null) {
+            function navigateTo(pageId, toolId = null, replaceHistory = false) {
                 // Hide all pages
                 pages.forEach(page => {
                     page.style.display = 'none';
@@ -1916,13 +1875,6 @@
                         const firstTab = targetPage.querySelector('.tab-button');
                         if (firstTab) {
                             activateTool(pageId, firstTab.dataset.tool, replaceHistory);
-                        } else {
-                            // Handle new-tab-btn pages (encode-decode, text-analysis)
-                            // If a specific ntool was requested (e.g. from home card), activate it
-                            const targetTab = ntoolId
-                                ? targetPage.querySelector('.new-tab-btn[data-ntool="' + ntoolId + '"]')
-                                : targetPage.querySelector('.new-tab-btn');
-                            if (targetTab) activateNewTool(targetTab);
                         }
                     } else if (staticPageContent[pageId]) {
                         renderStaticPage(pageId);
@@ -1944,86 +1896,6 @@
                     
                     window.scrollTo(0, 0);
                     closeMobileNav();
-                }
-            }
-
-            // Handles tab switching for new-style pages (encode-decode, text-analysis)
-            const newToolNames = {
-                'encode-decode': {
-                    'hex-to-text': 'Hex to Text Converter',
-                    'text-to-hex': 'Text to Hex Converter',
-                    'ascii-to-text': 'ASCII to Text Converter',
-                    'text-to-ascii': 'Text to ASCII Converter',
-                    'morse': 'Morse Code Translator',
-                    'caesar': 'Caesar Cipher ROT13',
-                    'qr': 'QR Code Generator',
-                },
-                'text-analysis': {
-                    'word-frequency': 'Word Frequency Counter',
-                    'keyword-density': 'Keyword Density Checker',
-                    'readability': 'Readability Score Checker',
-                    'diff': 'Text Diff Compare',
-                    'reading-time': 'Reading Time Calculator',
-                    'syllable': 'Syllable Counter',
-                    'sentiment': 'Sentiment Analyzer',
-                    'lang': 'Language Detector',
-                    'similarity': 'Text Similarity Checker',
-                }
-            };
-
-            const newToolSlugs = {
-                'encode-decode': {
-                    'hex-to-text': 'hex-to-text',
-                    'text-to-hex': 'text-to-hex',
-                    'ascii-to-text': 'ascii-to-text',
-                    'text-to-ascii': 'text-to-ascii',
-                    'morse': 'morse-code-translator',
-                    'caesar': 'caesar-cipher-rot13',
-                    'qr': 'qr-code-generator',
-                },
-                'text-analysis': {
-                    'word-frequency': 'word-frequency-counter',
-                    'keyword-density': 'keyword-density-checker',
-                    'readability': 'readability-score',
-                    'diff': 'text-diff-compare',
-                    'reading-time': 'reading-time-calculator',
-                    'syllable': 'syllable-counter',
-                    'sentiment': 'sentiment-analyzer',
-                    'lang': 'language-detector',
-                    'similarity': 'text-similarity-checker',
-                }
-            };
-
-            function activateNewTool(btn, replaceHistory = false) {
-                const page = btn.closest('.page-container');
-                if (!page) return;
-                const pageId = page.id.replace('page-', '');
-
-                // Update active tab button
-                page.querySelectorAll('.new-tab-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                // Hide all tool areas
-                page.querySelectorAll('.ntool-area').forEach(a => {
-                    a.style.setProperty('display', 'none', 'important');
-                });
-
-                // Show selected tool area
-                const toolId = btn.getAttribute('data-ntool');
-                const area = document.getElementById('ntool-' + pageId + '-' + toolId);
-                if (area) {
-                    area.style.setProperty('display', 'block', 'important');
-                }
-
-                // Update URL and page title
-                const slug = (newToolSlugs[pageId] && newToolSlugs[pageId][toolId]) || toolId;
-                const title = (newToolNames[pageId] && newToolNames[pageId][toolId]) || toolId;
-                const url = '/' + slug;
-                document.title = title + ' | PhraseFixTools';
-                if (replaceHistory) {
-                    window.history.replaceState({ pageId, toolId, isNewTool: true }, title, url);
-                } else {
-                    window.history.pushState({ pageId, toolId, isNewTool: true }, title, url);
                 }
             }
 
@@ -2214,21 +2086,12 @@
 
             // Navigation Clicks
             document.body.addEventListener('click', (e) => {
-                // Handle new-tab-btn (encode-decode, text-analysis pages)
-                const newTabBtn = e.target.closest('.new-tab-btn');
-                if (newTabBtn) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    activateNewTool(newTabBtn);
-                    return;
-                }
                 const target = e.target.closest('[data-navigate]');
                 if (target) {
                     e.preventDefault();
                     const page = target.dataset.navigate;
                     const tool = target.dataset.tool;
-                    const ntool = target.dataset.ntool;
-                    navigateTo(page, tool, false, ntool);
+                    navigateTo(page, tool);
                 } else if (e.target.classList.contains('tab-button')) {
                      const tool = e.target.dataset.tool;
                      // Find parent page id
@@ -2254,43 +2117,23 @@
             // Mobile Menu
             function buildMobileMenu() {
                 let html = '<div class="mobile-nav-links">';
-
-                // Label
-                html += '<h4>TOOLS</h4>';
-
                 navItems.forEach(item => {
-                    const label = item.page.charAt(0).toUpperCase() + item.page.slice(1).replace(/-/g, ' ');
-                    html += `<details><summary>${label}</summary>`;
+                    html += `<details><summary>${item.page.charAt(0).toUpperCase() + item.page.slice(1)}</summary>`;
                     item.tools.forEach(tool => {
                         html += `<button class="dropdown-item" data-navigate="${item.page}" data-tool="${tool.tool}">${tool.name}</button>`;
                     });
                     html += `</details>`;
                 });
-
-                // Add new-style pages
-                html += '<h4>MORE TOOLS</h4>';
-                html += `<details><summary>Encode &amp; Decode</summary>
-                    <button class="dropdown-item" data-navigate="encode-decode" data-ntool="hex-to-text">Hex to Text</button>
-                    <button class="dropdown-item" data-navigate="encode-decode" data-ntool="text-to-hex">Text to Hex</button>
-                    <button class="dropdown-item" data-navigate="encode-decode" data-ntool="ascii-to-text">ASCII to Text</button>
-                    <button class="dropdown-item" data-navigate="encode-decode" data-ntool="text-to-ascii">Text to ASCII</button>
-                    <button class="dropdown-item" data-navigate="encode-decode" data-ntool="morse">Morse Code</button>
-                    <button class="dropdown-item" data-navigate="encode-decode" data-ntool="caesar">Caesar Cipher</button>
-                    <button class="dropdown-item" data-navigate="encode-decode" data-ntool="qr">QR Code Generator</button>
-                </details>`;
-                html += `<details><summary>Text Analysis</summary>
-                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="word-frequency">Word Frequency</button>
-                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="keyword-density">Keyword Density</button>
-                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="readability">Readability Score</button>
-                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="diff">Text Diff</button>
-                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="reading-time">Reading Time</button>
-                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="syllable">Syllable Counter</button>
-                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="sentiment">Sentiment Analyzer</button>
-                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="lang">Language Detector</button>
-                    <button class="dropdown-item" data-navigate="text-analysis" data-ntool="similarity">Text Similarity</button>
-                </details>`;
-
                 html += '</div>';
+                
+                html += `
+                    <div class="mobile-nav-static-links">
+                        <a href="#" data-navigate="privacy">Privacy Policy</a>
+                        <a href="#" data-navigate="terms">Terms of Service</a>
+                        <a href="#" data-navigate="contact">Contact Us</a>
+                    </div>
+                `;
+                
                 mobileNavContent.innerHTML = html;
             }
             buildMobileMenu();
@@ -2321,12 +2164,9 @@
                 const matched = allTools.filter(t => t.name.toLowerCase().includes(query));
                 
                 if (matched.length > 0) {
-                    searchResults.innerHTML = matched.map(t => {
-                        if (t.ntool) {
-                            return `<button class="search-results-item" data-navigate="${t.page}" data-ntool="${t.ntool}">${t.name}</button>`;
-                        }
-                        return `<button class="search-results-item" data-navigate="${t.page}" data-tool="${t.tool}">${t.name}</button>`;
-                    }).join('');
+                    searchResults.innerHTML = matched.map(t => 
+                        `<button class="search-results-item" data-navigate="${t.page}" data-tool="${t.tool}">${t.name}</button>`
+                    ).join('');
                     searchResults.classList.remove('hidden');
                 } else {
                     searchResults.innerHTML = '<div style="padding: 1rem; color: var(--text-light);">No tools found</div>';
@@ -2907,9 +2747,7 @@
 
             window.addEventListener('popstate', (event) => {
                 const state = event.state;
-                if (state && state.isNewTool && state.pageId && state.toolId) {
-                    navigateTo(state.pageId, null, true, state.toolId);
-                } else if (state && state.categoryId && state.toolId) {
+                if (state && state.categoryId && state.toolId) {
                     navigateTo(state.categoryId, state.toolId, true);
                 } else if (state && state.pageId) {
                     navigateTo(state.pageId, null, true);

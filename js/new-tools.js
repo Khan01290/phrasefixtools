@@ -182,24 +182,13 @@ function initEncodeTools() {
     if (!txt.trim()) return;
     const container = document.getElementById('qr-output');
     const status    = document.getElementById('qr-status');
-    // Clear previous QR - must destroy old instance if QRCode lib was used
-    if (container._qrInstance) { container._qrInstance.clear(); container._qrInstance = null; }
     container.innerHTML = '';
     if (window.QRCode) {
-      container._qrInstance = new QRCode(container, {
-        text: txt,
-        width: 220,
-        height: 220,
-        colorDark: '#7c3aed',
-        colorLight: '#1e293b',
-        correctLevel: QRCode.CorrectLevel.H
-      });
+      new QRCode(container, {text:txt, width:220, height:220, colorDark:'#7c3aed', colorLight:'#1e293b'});
     } else {
-      // Fallback: use a reliable QR API
       const img = document.createElement('img');
-      img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=' + encodeURIComponent(txt);
-      img.alt = 'QR Code';
-      img.style.cssText = 'border-radius:8px;display:block';
+      img.src = 'https://chart.googleapis.com/chart?chs=220x220&cht=qr&chl='+encodeURIComponent(txt);
+      img.alt = 'QR Code'; img.style.borderRadius='8px';
       container.appendChild(img);
     }
     if (status) status.textContent = '✅ QR generated for: '+txt.substring(0,50)+(txt.length>50?'...':'');
@@ -459,13 +448,57 @@ function initAnalysisTools() {
   };
 }
 
+/* ============================================================
+   TAB SWITCHING
+   The first tool area has display:block set directly in HTML.
+   JS only needs to handle switching when tabs are clicked.
+   ============================================================ */
+function initNewTabs(pageId) {
+  const page = document.getElementById('page-' + pageId);
+  if (!page) return;
+  page.querySelectorAll('.new-tab-btn').forEach(function(btn) {
+    btn.onclick = function() {
+      page.querySelectorAll('.new-tab-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      page.querySelectorAll('.ntool-area').forEach(a => a.style.setProperty('display','none','important'));
+      const area = document.getElementById('ntool-' + pageId + '-' + this.dataset.ntool);
+      if (area) area.style.setProperty('display','block','important');
+    };
+  });
+}
 
-/* Tab switching handled in app.js via activateNewTool() */
+/* ============================================================
+   TAB SWITCHING — Single delegated listener, most reliable
+   ============================================================ */
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('.new-tab-btn');
+  if (!btn) return;
+  var page = btn.closest('.page-container');
+  if (!page) return;
+  var pageId = page.id.replace('page-', '');
 
-/* ── BOOT ─────────────────────────────────────────────── */
-document.addEventListener('DOMContentLoaded', function() {
-  initEncodeTools();
-  initAnalysisTools();
-});
+  // Update active tab styling
+  page.querySelectorAll('.new-tab-btn').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  btn.classList.add('active');
+
+  // Hide all tool areas in this page
+  page.querySelectorAll('.ntool-area').forEach(function(a) {
+    a.style.cssText += '; display: none !important;';
+  });
+
+  // Show the selected tool area
+  var toolId = btn.getAttribute('data-ntool');
+  var areaId = 'ntool-' + pageId + '-' + toolId;
+  var area = document.getElementById(areaId);
+  if (area) {
+    area.style.cssText += '; display: block !important;';
+  }
+}, true); // useCapture=true — fires before any other handler
+
+/* ── BOOT ─────────────────────────────────────────────────── */
+initEncodeTools();
+initAnalysisTools();
 
 })();

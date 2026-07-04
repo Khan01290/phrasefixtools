@@ -1,0 +1,14 @@
+Options -Indexes
+RewriteEngine On
+
+# Serve real files/dirs directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Let these through
+RewriteRule ^(css|js|seo)/ - [L]
+RewriteRule ^(robots\.txt|sitemap\.xml|favicon\.ico)$ - [L]
+
+# Route clean tool URLs → index.php (handles routing internally)
+RewriteRule ^([a-zA-Z0-9][a-zA-Z0-9\-]*)/?$ index.php [L,QSA]
