@@ -1811,10 +1811,14 @@
                     .replace(/\s+/g, '-')
                     .replace(/[^A-Za-z0-9-]/g, '')
                     .replace(/-+/g, '-')
-                    .replace(/^-+|-+$/g, '');
+                    .replace(/^-+|-+$/g, '')
+                    .toLowerCase();
             }
 
             function getToolRoute(categoryId, toolId) {
+                // Use tool.tool ID directly as the URL slug for clean, stable URLs
+                // This matches the canonical HTML filenames served by the host
+                if (toolId) return toolId.toLowerCase();
                 const category = navItems.find(item => item.page === categoryId);
                 let displayName = '';
                 if (category) {

@@ -1,13 +1,24 @@
 [build]
   publish = "."
 
-# Force lowercase URLs — Netlify will redirect /Bold-Gothic to /bold-gothic automatically
-[build.processing]
-  skip_processing = false
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
-# Custom 404 page
-[build.environment]
-  NODE_VERSION = "18"
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
