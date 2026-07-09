@@ -1333,21 +1333,23 @@ Text 2: "The quick red fox"</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script defer src="/js/new-tools.js?v=1"></script>
 <script>
-(function(){
-  var page='encode-decode', ntool='text-to-ascii', tries=0;
-  var iv=setInterval(function(){
-    var nav=document.querySelector('.nav-link[data-navigate="'+page+'"]');
-    if(nav){
-      nav.click();
-      setTimeout(function(){
-        var btn=document.querySelector('#page-'+page+' .new-tab-btn[data-ntool="'+ntool+'"]');
-        if(btn) btn.click();
-        window.scrollTo({top:0,behavior:'smooth'});
-      },300);
-      clearInterval(iv);
+/* Wait for new-tools.js (defer) to finish, then activate the correct tool */
+(function() {
+  function tryActivate(tries) {
+    if (typeof window.activateNtool === 'function') {
+      // First navigate to the right page via app.js nav
+      var nav = document.querySelector('.nav-link[data-navigate="encode-decode"]');
+      if (nav) nav.click();
+      // Then activate the specific ntool (slight delay for page to show)
+      setTimeout(function() {
+        window.activateNtool('encode-decode', 'text-to-ascii');
+        window.scrollTo({top:0, behavior:'smooth'});
+      }, 150);
+    } else if (tries < 50) {
+      setTimeout(function() { tryActivate(tries + 1); }, 100);
     }
-    if(++tries>30) clearInterval(iv);
-  },100);
+  }
+  tryActivate(0);
 })();
 </script>
 </body>

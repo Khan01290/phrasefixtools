@@ -557,3 +557,33 @@ initEncodeTools();
 initAnalysisTools();
 
 })();
+
+/* ============================================================
+   GLOBAL activateNtool(pageId, ntoolId)
+   Called directly from each tool HTML page's init script.
+   Activates the correct tab, shows the correct area, and
+   updates the browser URL — all without relying on click events.
+   Exposed on window so inline scripts can call it.
+   ============================================================ */
+window.activateNtool = function(pageId, ntoolId) {
+  var page = document.getElementById('page-' + pageId);
+  if (!page) return;
+
+  // Activate tab button
+  page.querySelectorAll('.new-tab-btn').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-ntool') === ntoolId);
+  });
+
+  // Show correct tool area, hide others
+  page.querySelectorAll('.ntool-area').forEach(function(a) {
+    a.style.setProperty('display', 'none', 'important');
+  });
+  var area = document.getElementById('ntool-' + pageId + '-' + ntoolId);
+  if (area) area.style.setProperty('display', 'block', 'important');
+
+  // Update browser URL and page title
+  var urlSlug = NTOOL_URL_MAP[ntoolId] || ntoolId;
+  var title   = (NTOOL_TITLE_MAP[ntoolId] || ntoolId) + ' — Free Online Tool | PhraseFixTools';
+  window.history.replaceState({ pageId: pageId, ntool: ntoolId }, title, '/' + urlSlug);
+  document.title = title;
+};
