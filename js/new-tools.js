@@ -468,6 +468,50 @@ function initNewTabs(pageId) {
 }
 
 /* ============================================================
+   NTOOL → URL SLUG MAP
+   Maps data-ntool values to the canonical URL slug (HTML filename)
+   ============================================================ */
+var NTOOL_URL_MAP = {
+  /* encode-decode */
+  'hex-to-text':    'hex-to-text',
+  'text-to-hex':    'text-to-hex',
+  'ascii-to-text':  'ascii-to-text',
+  'text-to-ascii':  'text-to-ascii',
+  'morse':          'morse-code-translator',
+  'caesar':         'caesar-cipher-rot13',
+  'qr':             'qr-code-generator',
+  /* text-analysis */
+  'word-frequency': 'word-frequency-counter',
+  'keyword-density':'keyword-density-checker',
+  'readability':    'readability-score',
+  'diff':           'text-diff-compare',
+  'reading-time':   'reading-time-calculator',
+  'syllable':       'syllable-counter',
+  'sentiment':      'sentiment-analyzer',
+  'lang':           'language-detector',
+  'similarity':     'text-similarity-checker'
+};
+
+var NTOOL_TITLE_MAP = {
+  'hex-to-text':    'Hex To Text Converter',
+  'text-to-hex':    'Text To Hex Converter',
+  'ascii-to-text':  'ASCII To Text Converter',
+  'text-to-ascii':  'Text To ASCII Converter',
+  'morse':          'Morse Code Translator',
+  'caesar':         'Caesar Cipher ROT13 Encoder',
+  'qr':             'QR Code Generator',
+  'word-frequency': 'Word Frequency Counter',
+  'keyword-density':'Keyword Density Checker',
+  'readability':    'Readability Score Checker',
+  'diff':           'Text Diff Compare Tool',
+  'reading-time':   'Reading Time Calculator',
+  'syllable':       'Syllable Counter',
+  'sentiment':      'Sentiment Analyzer',
+  'lang':           'Language Detector',
+  'similarity':     'Text Similarity Checker'
+};
+
+/* ============================================================
    TAB SWITCHING — Single delegated listener, most reliable
    ============================================================ */
 document.addEventListener('click', function(e) {
@@ -495,6 +539,17 @@ document.addEventListener('click', function(e) {
   if (area) {
     area.style.cssText += '; display: block !important;';
   }
+
+  // ── UPDATE BROWSER URL ──────────────────────────────────────
+  var urlSlug = NTOOL_URL_MAP[toolId];
+  if (urlSlug) {
+    var title = (NTOOL_TITLE_MAP[toolId] || toolId) + ' — Free Online Tool | PhraseFixTools';
+    var url = '/' + urlSlug;
+    window.history.pushState({ pageId: pageId, ntool: toolId }, title, url);
+    document.title = title;
+  }
+  // ────────────────────────────────────────────────────────────
+
 }, true); // useCapture=true — fires before any other handler
 
 /* ── BOOT ─────────────────────────────────────────────────── */
