@@ -1877,8 +1877,11 @@
                     } else if (pageId !== 'home' && !staticPageContent[pageId]) {
                         // Activate first tool if none specified (for tool pages)
                         const firstTab = targetPage.querySelector('.tab-button');
+                        const firstNtab = targetPage.querySelector('.new-tab-btn');
                         if (firstTab) {
                             activateTool(pageId, firstTab.dataset.tool, replaceHistory);
+                        } else if (firstNtab && window.activateNtool) {
+                            window.activateNtool(pageId, firstNtab.dataset.ntool);
                         }
                     } else if (staticPageContent[pageId]) {
                         renderStaticPage(pageId);
@@ -1907,6 +1910,17 @@
                 console.log('activateTool called:', categoryId, toolId);
                 currentTool = toolId;
                 const page = document.getElementById(`page-${categoryId}`);
+
+                // Bridge to the new-tab-btn / ntool-area system (used by
+                // encode-decode & text-analysis tools) when the requested
+                // toolId isn't part of the older .tab-button system.
+                if (page && page.querySelector(`.new-tab-btn[data-ntool="${toolId}"]`)) {
+                    if (window.activateNtool) {
+                        window.activateNtool(categoryId, toolId);
+                    }
+                    return;
+                }
+
                 const tabs = page.querySelectorAll('.tab-button');
                 const contentContainer = document.getElementById(`${categoryId}-content`);
                 
