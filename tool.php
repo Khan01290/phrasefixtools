@@ -170,6 +170,24 @@ $toolMap = [
   'extract-image-urls'       => ['page'=>'extract','tool'=>'extract-image-urls',     'name'=>'Extract Image URLs'],
   'extract-text-between'     => ['page'=>'extract','tool'=>'extract-text-between',   'name'=>'Extract Text Between'],
   'extract-random-lines'     => ['page'=>'extract','tool'=>'extract-random-lines',   'name'=>'Extract Random Lines'],
+  // Encode / Decode
+  'hex-to-text'              => ['page'=>'encode-decode','tool'=>'hex-to-text',      'name'=>'Hex To Text Converter'],
+  'text-to-hex'              => ['page'=>'encode-decode','tool'=>'text-to-hex',      'name'=>'Text To Hex Converter'],
+  'ascii-to-text'            => ['page'=>'encode-decode','tool'=>'ascii-to-text',    'name'=>'ASCII To Text Converter'],
+  'text-to-ascii'            => ['page'=>'encode-decode','tool'=>'text-to-ascii',    'name'=>'Text To ASCII Converter'],
+  'morse-code-translator'    => ['page'=>'encode-decode','tool'=>'morse',            'name'=>'Morse Code Translator'],
+  'caesar-cipher-rot13'      => ['page'=>'encode-decode','tool'=>'caesar',           'name'=>'Caesar Cipher ROT13 Encoder'],
+  'qr-code-generator'        => ['page'=>'encode-decode','tool'=>'qr',              'name'=>'QR Code Generator'],
+  // Text Analysis
+  'word-frequency-counter'   => ['page'=>'text-analysis','tool'=>'word-frequency',   'name'=>'Word Frequency Counter'],
+  'keyword-density-checker'  => ['page'=>'text-analysis','tool'=>'keyword-density',  'name'=>'Keyword Density Checker'],
+  'readability-score'        => ['page'=>'text-analysis','tool'=>'readability',      'name'=>'Readability Score Checker'],
+  'text-diff-compare'        => ['page'=>'text-analysis','tool'=>'diff',             'name'=>'Text Diff Compare Tool'],
+  'reading-time-calculator'  => ['page'=>'text-analysis','tool'=>'reading-time',     'name'=>'Reading Time Calculator'],
+  'syllable-counter'         => ['page'=>'text-analysis','tool'=>'syllable',         'name'=>'Syllable Counter'],
+  'sentiment-analyzer'       => ['page'=>'text-analysis','tool'=>'sentiment',        'name'=>'Sentiment Analyzer'],
+  'language-detector'        => ['page'=>'text-analysis','tool'=>'lang',             'name'=>'Language Detector'],
+  'text-similarity-checker'  => ['page'=>'text-analysis','tool'=>'similarity',       'name'=>'Text Similarity Checker'],
 ];
 
 // ── Normalize slug: lower-case, remove spaces & underscores ─────────────────
@@ -289,7 +307,12 @@ function av(string $p): string {
       nav.click();
       setTimeout(function() {
         var tab = document.querySelector('#' + page + '-tabs .tab-button[data-tool="' + tool + '"]');
-        if (tab) tab.click();
+        if (tab) {
+          tab.click();
+        } else if (window.activateNtool) {
+          // Newer tools use the new-tab-btn/ntool system instead of .tab-button
+          window.activateNtool(page, tool);
+        }
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }, 150);
       clearInterval(iv);
