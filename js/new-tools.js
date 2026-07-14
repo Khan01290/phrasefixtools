@@ -552,18 +552,14 @@ document.addEventListener('click', function(e) {
 
 }, true); // useCapture=true — fires before any other handler
 
-/* ── BOOT ─────────────────────────────────────────────────── */
-initEncodeTools();
-initAnalysisTools();
-
-})();
-
 /* ============================================================
    GLOBAL activateNtool(pageId, ntoolId)
    Called directly from each tool HTML page's init script.
    Activates the correct tab, shows the correct area, and
    updates the browser URL — all without relying on click events.
    Exposed on window so inline scripts can call it.
+   NOTE: defined INSIDE this IIFE (not after it) so it has access
+   to NTOOL_URL_MAP / NTOOL_TITLE_MAP, which are scoped here.
    ============================================================ */
 window.activateNtool = function(pageId, ntoolId) {
   var page = document.getElementById('page-' + pageId);
@@ -586,4 +582,13 @@ window.activateNtool = function(pageId, ntoolId) {
   var title   = (NTOOL_TITLE_MAP[ntoolId] || ntoolId) + ' — Free Online Tool | PhraseFixTools';
   window.history.replaceState({ pageId: pageId, ntool: ntoolId }, title, '/' + urlSlug);
   document.title = title;
+
+  // Ensure the page is scrolled to the top after switching tools
+  window.scrollTo(0, 0);
 };
+
+/* ── BOOT ─────────────────────────────────────────────────── */
+initEncodeTools();
+initAnalysisTools();
+
+})();
